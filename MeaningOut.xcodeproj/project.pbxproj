@@ -10,7 +10,6 @@
 		CE993C772C1B236E0024DAEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE993C762C1B236E0024DAEE /* AppDelegate.swift */; };
 		CE993C792C1B236E0024DAEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE993C782C1B236E0024DAEE /* SceneDelegate.swift */; };
 		CE993C7B2C1B236E0024DAEE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE993C7A2C1B236E0024DAEE /* ViewController.swift */; };
-		CE993C7E2C1B236E0024DAEE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CE993C7D2C1B236E0024DAEE /* Base */; };
 		CE993C802C1B23700024DAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE993C7F2C1B23700024DAEE /* Assets.xcassets */; };
 		CE993C832C1B23700024DAEE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CE993C822C1B23700024DAEE /* Base */; };
 /* End PBXBuildFile section */
@@ -20,7 +19,6 @@
 		CE993C762C1B236E0024DAEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE993C782C1B236E0024DAEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CE993C7A2C1B236E0024DAEE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CE993C7D2C1B236E0024DAEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE993C7F2C1B23700024DAEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE993C822C1B23700024DAEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE993C842C1B23700024DAEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,7 +57,6 @@
 				CE993C762C1B236E0024DAEE /* AppDelegate.swift */,
 				CE993C782C1B236E0024DAEE /* SceneDelegate.swift */,
 				CE993C7A2C1B236E0024DAEE /* ViewController.swift */,
-				CE993C7C2C1B236E0024DAEE /* Main.storyboard */,
 				CE993C7F2C1B23700024DAEE /* Assets.xcassets */,
 				CE993C812C1B23700024DAEE /* LaunchScreen.storyboard */,
 				CE993C842C1B23700024DAEE /* Info.plist */,
@@ -127,7 +124,6 @@
 			files = (
 				CE993C802C1B23700024DAEE /* Assets.xcassets in Resources */,
 				CE993C832C1B23700024DAEE /* Base in Resources */,
-				CE993C7E2C1B236E0024DAEE /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,14 +143,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CE993C7C2C1B236E0024DAEE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CE993C7D2C1B236E0024DAEE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CE993C812C1B23700024DAEE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -297,7 +285,6 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Meaning Out";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -330,7 +317,6 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Meaning Out";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
