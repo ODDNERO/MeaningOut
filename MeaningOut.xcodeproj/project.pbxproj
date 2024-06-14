@@ -16,6 +16,7 @@
 		CE0379252C1C3BDB00D72498 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0379242C1C3BDB00D72498 /* ImageView.swift */; };
 		CE0379272C1C3F4B00D72498 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0379262C1C3F4B00D72498 /* SettingViewController.swift */; };
 		CE03792B2C1C508800D72498 /* OnbordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03792A2C1C508800D72498 /* OnbordingView.swift */; };
+		CE03792F2C1C730500D72498 /* SettingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03792E2C1C730500D72498 /* SettingProfileViewController.swift */; };
 		CE993C772C1B236E0024DAEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE993C762C1B236E0024DAEE /* AppDelegate.swift */; };
 		CE993C792C1B236E0024DAEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE993C782C1B236E0024DAEE /* SceneDelegate.swift */; };
 		CE993C802C1B23700024DAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE993C7F2C1B23700024DAEE /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		CE0379242C1C3BDB00D72498 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		CE0379262C1C3F4B00D72498 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		CE03792A2C1C508800D72498 /* OnbordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbordingView.swift; sourceTree = "<group>"; };
+		CE03792E2C1C730500D72498 /* SettingProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProfileViewController.swift; sourceTree = "<group>"; };
 		CE993C732C1B236E0024DAEE /* MeaningOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeaningOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE993C762C1B236E0024DAEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE993C782C1B236E0024DAEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,9 +78,9 @@
 			isa = PBXGroup;
 			children = (
 				CE03791F2C1C39E000D72498 /* TabBarController.swift */,
-				CE0379152C1C20E400D72498 /* OnbordingViewController.swift */,
-				CE0379212C1C3AA100D72498 /* SearchViewController.swift */,
-				CE0379262C1C3F4B00D72498 /* SettingViewController.swift */,
+				CE0379302C1C751600D72498 /* Create */,
+				CE0379322C1C75B700D72498 /* Search */,
+				CE0379332C1C75D600D72498 /* Setting */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -86,9 +88,42 @@
 		CE0379292C1C4D4900D72498 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CE03792A2C1C508800D72498 /* OnbordingView.swift */,
+				CE0379342C1C760A00D72498 /* Create */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		CE0379302C1C751600D72498 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				CE0379152C1C20E400D72498 /* OnbordingViewController.swift */,
+				CE03792E2C1C730500D72498 /* SettingProfileViewController.swift */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		CE0379322C1C75B700D72498 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CE0379212C1C3AA100D72498 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		CE0379332C1C75D600D72498 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				CE0379262C1C3F4B00D72498 /* SettingViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		CE0379342C1C760A00D72498 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				CE03792A2C1C508800D72498 /* OnbordingView.swift */,
+			);
+			path = Create;
 			sourceTree = "<group>";
 		};
 		CE993C6A2C1B236E0024DAEE = {
@@ -201,6 +236,7 @@
 				CE03791B2C1C247300D72498 /* NextButton.swift in Sources */,
 				CE0379252C1C3BDB00D72498 /* ImageView.swift in Sources */,
 				CE993C772C1B236E0024DAEE /* AppDelegate.swift in Sources */,
+				CE03792F2C1C730500D72498 /* SettingProfileViewController.swift in Sources */,
 				CE0379222C1C3AA100D72498 /* SearchViewController.swift in Sources */,
 				CE03792B2C1C508800D72498 /* OnbordingView.swift in Sources */,
 				CE0379162C1C20E400D72498 /* OnbordingViewController.swift in Sources */,

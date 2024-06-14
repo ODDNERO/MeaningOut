@@ -18,10 +18,13 @@ final class OnbordingViewController: UIViewController {
         super.viewDidLoad()
         
         navigationController?.navigationBar.isHidden = true
+        onbordingView.startButton.addTarget(self, action: #selector(startButtonClicked), for: .touchUpInside)
     }
 }
 
 //MARK: - Switching View
 extension OnbordingViewController {
-    
+    @objc func startButtonClicked() {
+        navigationController?.pushViewController(SettingProfileViewController(), animated: true)
+    }
 }
