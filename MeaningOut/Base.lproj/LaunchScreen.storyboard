@@ -23,7 +23,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="Wkx-R4-4PD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="23"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="23"/>
                                 <color key="textColor" name="primary"/>
                                 <nil key="highlightedColor"/>
                             </label>
