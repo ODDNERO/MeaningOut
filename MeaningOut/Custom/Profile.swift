@@ -55,7 +55,7 @@ final class Profile: UIImageView {
         return imageView
     }()
     
-    override init(frame: CGRect) {
+    init() {
         super.init(frame: .zero)
     }
     

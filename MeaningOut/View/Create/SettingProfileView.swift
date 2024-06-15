@@ -8,18 +8,8 @@
 import UIKit
 
 class SettingProfileView: UIView {
-    let settingImageView = Profile(frame: .zero).settingAvatars.randomElement()!
-    
-    let assistanceView = {
-        let image = Meaning.Image.camera
-        let imageView = UIImageView(image: image)
-        imageView.contentMode = .scaleAspectFit
-        imageView.backgroundColor = Meaning.Color.primary
-        imageView.tintColor = .white
-        imageView.contentMode = .scaleAspectFit
-        imageView.clipsToBounds = true
-        return imageView
-    }()
+    let settingImageView = Profile().settingAvatars.randomElement()!
+    let assistanceView = Profile().assistanceView
     
     let textField = {
         let textField = UITextField()
