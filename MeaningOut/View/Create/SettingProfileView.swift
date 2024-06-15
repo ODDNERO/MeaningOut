@@ -7,8 +7,8 @@
 
 import UIKit
 
-class SettingProfileView: UIView {
-    let settingImageView = Profile().settingAvatars.randomElement()!
+final class SettingProfileView: UIView {
+    var settingImageView = Profile().settingAvatars.randomElement()!
     let assistanceView = Profile().assistanceView
     
     let textField = {

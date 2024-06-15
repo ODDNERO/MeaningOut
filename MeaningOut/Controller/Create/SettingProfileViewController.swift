@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SettingProfileViewController: UIViewController {
+final class SettingProfileViewController: UIViewController {
     private let settingProfileView = SettingProfileView()
     
     override func loadView() {
@@ -17,6 +17,7 @@ class SettingProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        settingProfileView.settingImageView = Profile().settingAvatars.randomElement()!
         settingProfileView.settingImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(settingImageViewClicked)))
         settingProfileView.finishButton.addTarget(self, action: #selector(finishButtonClicked), for: .touchUpInside)
         settingProfileView.textField.addTarget(self, action: #selector(isValidNickname), for: .editingChanged)
