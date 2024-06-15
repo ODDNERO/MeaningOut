@@ -9,22 +9,27 @@ import UIKit
 
 final class SettingProfileViewController: UIViewController {
     private let settingProfileView = SettingProfileView()
-    
+
     override func loadView() {
         self.view = settingProfileView
-        settingNavigation(title: "PROFILE SETTING", rightBarItem: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        settingProfileView.settingImageView = Profile().settingAvatars.randomElement()!
-        settingProfileView.settingImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(settingImageViewClicked)))
-        settingProfileView.finishButton.addTarget(self, action: #selector(finishButtonClicked), for: .touchUpInside)
-        settingProfileView.textField.addTarget(self, action: #selector(isValidNickname), for: .editingChanged)
+        settingNavigation(title: "PROFILE SETTING", rightBarItem: nil)
+        configureSetting()
     }
 }
 
 extension SettingProfileViewController {
+    private func configureSetting() {
+        settingProfileView.settingImageView.isUserInteractionEnabled = true
+        settingProfileView.settingImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(settingImageViewClicked)))
+        
+        settingProfileView.finishButton.addTarget(self, action: #selector(finishButtonClicked), for: .touchUpInside)
+        settingProfileView.textField.addTarget(self, action: #selector(isValidNickname), for: .editingChanged)
+    }
+    
     @objc func settingImageViewClicked() {
         navigationController?.pushViewController(SettingPictureViewController(), animated: true)
     }

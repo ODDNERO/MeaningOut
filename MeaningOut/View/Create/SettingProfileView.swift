@@ -8,7 +8,7 @@
 import UIKit
 
 final class SettingProfileView: UIView {
-    var settingImageView = Profile().settingAvatars.randomElement()!
+    var settingImageView = UIImageView()
     let assistanceView = Profile().assistanceView
     
     let textField = {
@@ -39,7 +39,7 @@ final class SettingProfileView: UIView {
         super.init(frame: frame)
         
         self.backgroundColor = Meaning.Color.background
-        settingImageView.isUserInteractionEnabled = true
+        settingImageView = Profile().settingAvatars.randomElement()!
         configureHierarchy()
         configureLayout()
     }
