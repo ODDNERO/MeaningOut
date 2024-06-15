@@ -8,9 +8,28 @@
 import UIKit
 
 class SettingProfileViewController: UIViewController {
-
+    private let settingProfileView = SettingProfileView()
+    
+    override func loadView() {
+        self.view = settingProfileView
+        settingNavigation()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+
+    }
+}
+
+//MARK: - Switching View
+extension SettingProfileViewController {
+    func settingNavigation() {
+        navigationController?.navigationBar.isHidden = false
+        navigationItem.title = "PROFILE SETTING"
+        navigationController?.navigationBar.tintColor = .black
+        navigationItem.backButtonTitle = ""
+        navigationController?.navigationBar.titleTextAttributes = [
+            .foregroundColor: UIColor.black
+        ]
     }
 }
