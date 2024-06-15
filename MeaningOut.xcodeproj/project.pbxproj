@@ -17,6 +17,10 @@
 		CE0379272C1C3F4B00D72498 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0379262C1C3F4B00D72498 /* SettingViewController.swift */; };
 		CE03792B2C1C508800D72498 /* OnbordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03792A2C1C508800D72498 /* OnbordingView.swift */; };
 		CE03792F2C1C730500D72498 /* SettingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03792E2C1C730500D72498 /* SettingProfileViewController.swift */; };
+		CE0379362C1C779100D72498 /* SettingProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0379352C1C779100D72498 /* SettingProfileView.swift */; };
+		CE0379382C1C7A4600D72498 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0379372C1C7A4600D72498 /* Profile.swift */; };
+		CE03793A2C1C842600D72498 /* SettingPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0379392C1C842500D72498 /* SettingPictureViewController.swift */; };
+		CE03793C2C1DDDC700D72498 /* NicknameTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03793B2C1DDDC700D72498 /* NicknameTextFieldView.swift */; };
 		CE993C772C1B236E0024DAEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE993C762C1B236E0024DAEE /* AppDelegate.swift */; };
 		CE993C792C1B236E0024DAEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE993C782C1B236E0024DAEE /* SceneDelegate.swift */; };
 		CE993C802C1B23700024DAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE993C7F2C1B23700024DAEE /* Assets.xcassets */; };
@@ -34,6 +38,10 @@
 		CE0379262C1C3F4B00D72498 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		CE03792A2C1C508800D72498 /* OnbordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbordingView.swift; sourceTree = "<group>"; };
 		CE03792E2C1C730500D72498 /* SettingProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProfileViewController.swift; sourceTree = "<group>"; };
+		CE0379352C1C779100D72498 /* SettingProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProfileView.swift; sourceTree = "<group>"; };
+		CE0379372C1C7A4600D72498 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		CE0379392C1C842500D72498 /* SettingPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPictureViewController.swift; sourceTree = "<group>"; };
+		CE03793B2C1DDDC700D72498 /* NicknameTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameTextFieldView.swift; sourceTree = "<group>"; };
 		CE993C732C1B236E0024DAEE /* MeaningOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeaningOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE993C762C1B236E0024DAEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE993C782C1B236E0024DAEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +69,8 @@
 				CE0379172C1C215200D72498 /* Resource.swift */,
 				CE0379242C1C3BDB00D72498 /* ImageView.swift */,
 				CE03791A2C1C247300D72498 /* NextButton.swift */,
+				CE0379372C1C7A4600D72498 /* Profile.swift */,
+				CE03793B2C1DDDC700D72498 /* NicknameTextFieldView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -98,6 +108,7 @@
 			children = (
 				CE0379152C1C20E400D72498 /* OnbordingViewController.swift */,
 				CE03792E2C1C730500D72498 /* SettingProfileViewController.swift */,
+				CE0379392C1C842500D72498 /* SettingPictureViewController.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -122,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				CE03792A2C1C508800D72498 /* OnbordingView.swift */,
+				CE0379352C1C779100D72498 /* SettingProfileView.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -233,14 +245,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE03793C2C1DDDC700D72498 /* NicknameTextFieldView.swift in Sources */,
 				CE03791B2C1C247300D72498 /* NextButton.swift in Sources */,
 				CE0379252C1C3BDB00D72498 /* ImageView.swift in Sources */,
+				CE0379362C1C779100D72498 /* SettingProfileView.swift in Sources */,
+				CE0379382C1C7A4600D72498 /* Profile.swift in Sources */,
 				CE993C772C1B236E0024DAEE /* AppDelegate.swift in Sources */,
 				CE03792F2C1C730500D72498 /* SettingProfileViewController.swift in Sources */,
 				CE0379222C1C3AA100D72498 /* SearchViewController.swift in Sources */,
 				CE03792B2C1C508800D72498 /* OnbordingView.swift in Sources */,
 				CE0379162C1C20E400D72498 /* OnbordingViewController.swift in Sources */,
 				CE0379272C1C3F4B00D72498 /* SettingViewController.swift in Sources */,
+				CE03793A2C1C842600D72498 /* SettingPictureViewController.swift in Sources */,
 				CE993C8B2C1B2AB60024DAEE /* APIKey.swift in Sources */,
 				CE0379202C1C39E000D72498 /* TabBarController.swift in Sources */,
 				CE0379182C1C215200D72498 /* Resource.swift in Sources */,

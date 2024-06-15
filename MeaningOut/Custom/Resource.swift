@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 enum Meaning {
     enum Color {
@@ -13,8 +14,8 @@ enum Meaning {
         static let gray1 = UIColor.customGray1
         static let gray2 = UIColor.customGray2
         static let gray3 = UIColor.customGray3
+        static let background = UIColor.white
         static let black = UIColor.black
-        static let white = UIColor.white
     }
     
     enum Image {
@@ -26,10 +27,32 @@ enum Meaning {
         static let clock = UIImage(systemName: "clock")
         static let remove = UIImage(systemName: "xmark")
         static let camera = UIImage(systemName: "camera.fill")
+        static let avatars = {
+            var avatars: [UIImage] = []
+            let avatarNames = ["profile_0", "profile_1", "profile_2", "profile_3", "profile_4", "profile_5", "profile_6", "profile_7", "profile_8", "profile_9", "profile_10", "profile_11"]
+            avatarNames.forEach { avatars.append(UIImage(named: $0)!) }
+            return avatars
+        }()
     }
     
     enum Font {
         static let bold15 = UIFont.boldSystemFont(ofSize: 15)
         static let heavy16 = UIFont.systemFont(ofSize: 16, weight: .heavy)
+    }
+    
+    enum Underline {
+        static let gray = {
+            let view = UIView()
+            view.backgroundColor = Meaning.Color.gray3
+            view.snp.makeConstraints { $0.height.equalTo(1) }
+            return view
+        }()
+        
+        static let black = {
+            let view = UIView()
+            view.backgroundColor = .black
+            view.snp.makeConstraints { $0.height.equalTo(1) }
+            return view
+        }()
     }
 }
