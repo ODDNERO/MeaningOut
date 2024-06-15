@@ -9,8 +9,18 @@ import UIKit
 
 class SettingViewController: UIViewController {
 
+    override func loadView() {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        settingNavigation(title: "SETTING", rightBarItem: nil)
         view.backgroundColor = Meaning.Color.background
     }
+}
+
+//MARK: - Switching View
+extension SettingViewController {
+    
 }

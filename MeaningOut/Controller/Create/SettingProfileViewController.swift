@@ -12,7 +12,7 @@ class SettingProfileViewController: UIViewController {
     
     override func loadView() {
         self.view = settingProfileView
-        settingNavigation()
+        settingNavigation(title: "PROFILE SETTING", rightBarItem: nil)
     }
     
     override func viewDidLoad() {
@@ -23,18 +23,7 @@ class SettingProfileViewController: UIViewController {
     }
 }
 
-//MARK: - Switching View
 extension SettingProfileViewController {
-    func settingNavigation() {
-        navigationController?.navigationBar.isHidden = false
-        navigationItem.title = "PROFILE SETTING"
-        navigationController?.navigationBar.tintColor = .black
-        navigationItem.backButtonTitle = ""
-        navigationController?.navigationBar.titleTextAttributes = [
-            .foregroundColor: UIColor.black
-        ]
-    }
-    
     @objc func settingImageViewClicked() {
         navigationController?.pushViewController(SettingPictureViewController(), animated: true)
     }

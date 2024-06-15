@@ -12,6 +12,6 @@ class SettingPictureViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Meaning.Color.background
-        navigationItem.title = "PROFILE SETTING"
+        settingNavigation(title: "PROFILE SETTING", rightBarItem: nil)
     }
 }

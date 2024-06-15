@@ -8,9 +8,19 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-
+    let userNickname = UserDefaults.standard.string(forKey: "userNickname")!
+    
+    override func loadView() {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        settingNavigation(title: "\(userNickname)'s MEANING OUT", rightBarItem: nil)
         view.backgroundColor = Meaning.Color.background
     }
+}
+
+extension SearchViewController {
+
 }

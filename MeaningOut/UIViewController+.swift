@@ -16,4 +16,16 @@ extension UIViewController {
         }
         return nil
     }
+    
+    func settingNavigation(title: String, rightBarItem: UIBarButtonItem?) {
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.shadowImage = nil
+        navigationItem.title = title
+        navigationController?.navigationBar.tintColor = .black
+        navigationItem.backButtonTitle = ""
+        navigationController?.navigationBar.titleTextAttributes = [
+            .foregroundColor: UIColor.black
+        ]
+        navigationController?.navigationItem.rightBarButtonItem = rightBarItem
+    }
 }
