@@ -21,5 +21,12 @@ extension Meaning {
             launchView.contentMode = .scaleAspectFill
             return launchView
         }()
+        
+        
+        static let avatars = {
+            var avatarViews: [UIImageView] = []
+            Meaning.Image.avatars.forEach { avatarViews.append(UIImageView(image: $0)) }
+            return avatarViews
+        }()
     }
 }
