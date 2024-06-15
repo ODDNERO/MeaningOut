@@ -18,7 +18,12 @@ final class OnbordingViewController: UIViewController {
         super.viewDidLoad()
         
         navigationController?.navigationBar.isHidden = true
+        navigationItem.backButtonTitle = ""
         onbordingView.startButton.addTarget(self, action: #selector(startButtonClicked), for: .touchUpInside)
+    }
+    
+    override func viewIsAppearing(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
     }
 }
 
