@@ -40,7 +40,12 @@ extension SettingProfileViewController {
     }
     
     @objc func finishButtonClicked() {
+        guard isValidNickname(textField: settingProfileView.textField) else { return }
         
+        let avatarImageIndex = findAvatarImageIndex(settingProfileView.settingImageView.image!)
+        UserDefaults.standard.set(avatarImageIndex, forKey: "userImageIndex")
+        UserDefaults.standard.set(settingProfileView.textField.text, forKey: "userNickname")
+        UserDefaults.standard.set(true, forKey: "isUser")
     }
     
     @objc func isValidNickname(textField: UITextField) -> Bool {
