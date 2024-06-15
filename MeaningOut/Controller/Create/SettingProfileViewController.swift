@@ -17,7 +17,8 @@ class SettingProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        settingProfileView.settingImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(settingImageViewClicked)))
+        settingProfileView.finishButton.addTarget(self, action: #selector(finishButtonClicked), for: .touchUpInside)
     }
 }
 
@@ -31,5 +32,13 @@ extension SettingProfileViewController {
         navigationController?.navigationBar.titleTextAttributes = [
             .foregroundColor: UIColor.black
         ]
+    }
+    
+    @objc func settingImageViewClicked() {
+        navigationController?.pushViewController(SettingPictureViewController(), animated: true)
+    }
+    
+    @objc func finishButtonClicked() {
+
     }
 }

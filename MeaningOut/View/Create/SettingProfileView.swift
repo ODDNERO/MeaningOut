@@ -49,6 +49,7 @@ class SettingProfileView: UIView {
         super.init(frame: frame)
         
         self.backgroundColor = Meaning.Color.background
+        settingImageView.isUserInteractionEnabled = true
         configureHierarchy()
         configureLayout()
     }
