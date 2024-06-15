@@ -36,23 +36,9 @@ enum Meaning {
     }
     
     enum Font {
+        static let medium13 = UIFont.systemFont(ofSize: 13, weight: .medium)
+        static let semi14 = UIFont.systemFont(ofSize: 14, weight: .semibold)
         static let bold15 = UIFont.boldSystemFont(ofSize: 15)
         static let heavy16 = UIFont.systemFont(ofSize: 16, weight: .heavy)
-    }
-    
-    enum Underline {
-        static let gray = {
-            let view = UIView()
-            view.backgroundColor = Meaning.Color.gray3
-            view.snp.makeConstraints { $0.height.equalTo(1) }
-            return view
-        }()
-        
-        static let black = {
-            let view = UIView()
-            view.backgroundColor = .black
-            view.snp.makeConstraints { $0.height.equalTo(1) }
-            return view
-        }()
     }
 }

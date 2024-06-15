@@ -7,12 +7,12 @@
 
 import UIKit
 
-class NextButton: UIButton {
+final class NextButton: UIButton {
     init(title: String) {
         super.init(frame: .zero)
         
         setTitle(title, for: .normal)
-        setTitleColor(Meaning.Color.white, for: .normal)
+        setTitleColor(.white, for: .normal)
         titleLabel?.font = Meaning.Font.heavy16
         backgroundColor = Meaning.Color.primary
         layer.cornerRadius = 23
@@ -22,4 +22,3 @@ class NextButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
 }
-

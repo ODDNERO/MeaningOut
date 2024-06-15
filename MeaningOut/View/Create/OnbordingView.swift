@@ -16,7 +16,7 @@ final class OnbordingView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.backgroundColor = .white
+        self.backgroundColor = Meaning.Color.background
         configureHierarchy()
         configureLayout()
     }
@@ -51,8 +51,8 @@ extension OnbordingView {
         
         startButton.snp.makeConstraints {
             $0.bottom.equalTo(self.safeAreaLayoutGuide).inset(10)
-            $0.width.equalTo(self).multipliedBy(0.8)
-            $0.height.equalTo(startButton.snp.width).multipliedBy(1.0 / 7.0)
+            $0.width.equalTo(self).multipliedBy(0.9)
+            $0.height.equalTo(startButton.snp.width).multipliedBy(1.0 / 8.0)
         }
     }
 }
