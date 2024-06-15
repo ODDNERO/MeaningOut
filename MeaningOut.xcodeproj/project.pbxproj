@@ -21,6 +21,7 @@
 		CE0379382C1C7A4600D72498 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0379372C1C7A4600D72498 /* Profile.swift */; };
 		CE03793A2C1C842600D72498 /* SettingPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0379392C1C842500D72498 /* SettingPictureViewController.swift */; };
 		CE03793C2C1DDDC700D72498 /* NicknameTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03793B2C1DDDC700D72498 /* NicknameTextFieldView.swift */; };
+		CE03793E2C1E2A2900D72498 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03793D2C1E2A2900D72498 /* UIViewController+.swift */; };
 		CE993C772C1B236E0024DAEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE993C762C1B236E0024DAEE /* AppDelegate.swift */; };
 		CE993C792C1B236E0024DAEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE993C782C1B236E0024DAEE /* SceneDelegate.swift */; };
 		CE993C802C1B23700024DAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE993C7F2C1B23700024DAEE /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		CE0379372C1C7A4600D72498 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		CE0379392C1C842500D72498 /* SettingPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPictureViewController.swift; sourceTree = "<group>"; };
 		CE03793B2C1DDDC700D72498 /* NicknameTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameTextFieldView.swift; sourceTree = "<group>"; };
+		CE03793D2C1E2A2900D72498 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		CE993C732C1B236E0024DAEE /* MeaningOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeaningOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE993C762C1B236E0024DAEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE993C782C1B236E0024DAEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				CE993C8A2C1B2AB60024DAEE /* APIKey.swift */,
+				CE03793D2C1E2A2900D72498 /* UIViewController+.swift */,
 				CE0379232C1C3AB200D72498 /* App */,
 				CE0379192C1C23A000D72498 /* Custom */,
 				CE0379292C1C4D4900D72498 /* View */,
@@ -251,6 +254,7 @@
 				CE0379362C1C779100D72498 /* SettingProfileView.swift in Sources */,
 				CE0379382C1C7A4600D72498 /* Profile.swift in Sources */,
 				CE993C772C1B236E0024DAEE /* AppDelegate.swift in Sources */,
+				CE03793E2C1E2A2900D72498 /* UIViewController+.swift in Sources */,
 				CE03792F2C1C730500D72498 /* SettingProfileViewController.swift in Sources */,
 				CE0379222C1C3AA100D72498 /* SearchViewController.swift in Sources */,
 				CE03792B2C1C508800D72498 /* OnbordingView.swift in Sources */,

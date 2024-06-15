@@ -46,6 +46,14 @@ extension SettingProfileViewController {
         UserDefaults.standard.set(avatarImageIndex, forKey: "userImageIndex")
         UserDefaults.standard.set(settingProfileView.textField.text, forKey: "userNickname")
         UserDefaults.standard.set(true, forKey: "isUser")
+        
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+        guard let sceneDelegate = windowScene.delegate as? SceneDelegate else { return }
+
+        let rootViewController = UINavigationController(rootViewController: TabBarController())
+        
+        sceneDelegate.window?.rootViewController = rootViewController
+        sceneDelegate.window?.makeKeyAndVisible()
     }
     
     @objc func isValidNickname(textField: UITextField) -> Bool {
