@@ -108,16 +108,17 @@ extension SettingPictureView: UICollectionViewDelegate, UICollectionViewDataSour
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AvatarCollectionViewCell.identifier, for: indexPath) as! AvatarCollectionViewCell
         
-        for num in 0...(Meaning.Image.avatars.count - 1) {
+        for num in 0...(collectionView.visibleCells.count - 1) {
             if indexPath.row == num {
-                collectionView.cellForItem(at: indexPath)?.isSelected = true
-                cell.updateData(cell: collectionView.cellForItem(at: indexPath)!)
+                collectionView.visibleCells[num].isSelected = true
+                cell.updateData(cell: collectionView.visibleCells[num])
             } else {
-                collectionView.cellForItem(at: [0, num])?.isSelected = false
-                cell.updateData(cell: collectionView.cellForItem(at: [0, num])!)
+                collectionView.visibleCells[num].isSelected = false
+                cell.updateData(cell: collectionView.visibleCells[num])
             }
         }
         print(indexPath)
+        
         
         collectionView.reloadData()
 //        selectedIndexPath = indexPath

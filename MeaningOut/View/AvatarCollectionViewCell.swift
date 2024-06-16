@@ -80,22 +80,40 @@ final class AvatarCollectionViewCell: UICollectionViewCell {
     
     func updateData(cell: UICollectionViewCell) {
         //        avatarImageView = Profile().currentAvatars[indexPath.row]
+        var cellImageView: UIImageView? = nil
         
-        if isSelected {
-            cell.contentView.layer.borderWidth = 3
-            cell.contentView.layer.borderColor = Meaning.Color.primary.cgColor
-            cell.contentView.alpha = 1.0
-//            avatarImageView.layer.borderWidth = 3
-//            avatarImageView.layer.borderColor = Meaning.Color.primary.cgColor
-//            avatarImageView.alpha = 1.0
-        } else {
-            cell.contentView.layer.borderWidth = 1
-            cell.contentView.layer.borderColor = UIColor.black.cgColor
-            cell.contentView.alpha = 0.5
-//            avatarImageView.layer.borderWidth = 1
-//            avatarImageView.layer.borderColor = UIColor.black.cgColor
-//            avatarImageView.alpha = 0.5
+        cell.contentView.subviews.forEach {
+            if let imageView = $0 as? UIImageView { cellImageView = imageView }
         }
+        guard let cellImageView else { return }
+        
+        switch isSelected {
+        case true:
+            cellImageView.layer.borderWidth = 3
+            cellImageView.layer.borderColor = Meaning.Color.primary.cgColor
+            cellImageView.alpha = 1.0
+        case false:
+            cellImageView.layer.borderWidth = 1
+            cellImageView.layer.borderColor = UIColor.black.cgColor
+            cellImageView.alpha = 0.5
+        }
+        
+//        if isSelected {
+//            cellImageView.layer.borderWidth = 3
+//            cell.contentView.layer.borderColor = Meaning.Color.primary.cgColor
+//            cell.contentView.alpha = 1.0
+//            //            avatarImageView.layer.borderWidth = 3
+//            //            avatarImageView.layer.borderColor = Meaning.Color.primary.cgColor
+//            //            avatarImageView.alpha = 1.0
+//        } else {
+//            cell.contentView.layer.borderWidth = 1
+//            cell.contentView.layer.borderColor = UIColor.black.cgColor
+//            cell.contentView.alpha = 0.5
+//            //            avatarImageView.layer.borderWidth = 1
+//            //            avatarImageView.layer.borderColor = UIColor.black.cgColor
+//            //            avatarImageView.alpha = 0.5
+//        }
     }
 }
+
 
