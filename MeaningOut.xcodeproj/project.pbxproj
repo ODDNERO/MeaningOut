@@ -22,6 +22,9 @@
 		CE03793A2C1C842600D72498 /* SettingPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0379392C1C842500D72498 /* SettingPictureViewController.swift */; };
 		CE03793C2C1DDDC700D72498 /* NicknameTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03793B2C1DDDC700D72498 /* NicknameTextFieldView.swift */; };
 		CE03793E2C1E2A2900D72498 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03793D2C1E2A2900D72498 /* UIViewController+.swift */; };
+		CE0379402C1E50E500D72498 /* SettingPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03793F2C1E50E500D72498 /* SettingPictureView.swift */; };
+		CE0379422C1E609E00D72498 /* AvatarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0379412C1E609E00D72498 /* AvatarCollectionViewCell.swift */; };
+		CE0379442C1E63DA00D72498 /* ldentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0379432C1E63DA00D72498 /* ldentifierProtocol.swift */; };
 		CE993C772C1B236E0024DAEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE993C762C1B236E0024DAEE /* AppDelegate.swift */; };
 		CE993C792C1B236E0024DAEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE993C782C1B236E0024DAEE /* SceneDelegate.swift */; };
 		CE993C802C1B23700024DAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE993C7F2C1B23700024DAEE /* Assets.xcassets */; };
@@ -44,6 +47,9 @@
 		CE0379392C1C842500D72498 /* SettingPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPictureViewController.swift; sourceTree = "<group>"; };
 		CE03793B2C1DDDC700D72498 /* NicknameTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameTextFieldView.swift; sourceTree = "<group>"; };
 		CE03793D2C1E2A2900D72498 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		CE03793F2C1E50E500D72498 /* SettingPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPictureView.swift; sourceTree = "<group>"; };
+		CE0379412C1E609E00D72498 /* AvatarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE0379432C1E63DA00D72498 /* ldentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ldentifierProtocol.swift; sourceTree = "<group>"; };
 		CE993C732C1B236E0024DAEE /* MeaningOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeaningOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE993C762C1B236E0024DAEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE993C782C1B236E0024DAEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +106,7 @@
 		CE0379292C1C4D4900D72498 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CE0379412C1E609E00D72498 /* AvatarCollectionViewCell.swift */,
 				CE0379342C1C760A00D72498 /* Create */,
 			);
 			path = View;
@@ -136,6 +143,7 @@
 			children = (
 				CE03792A2C1C508800D72498 /* OnbordingView.swift */,
 				CE0379352C1C779100D72498 /* SettingProfileView.swift */,
+				CE03793F2C1E50E500D72498 /* SettingPictureView.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -161,6 +169,7 @@
 			children = (
 				CE993C8A2C1B2AB60024DAEE /* APIKey.swift */,
 				CE03793D2C1E2A2900D72498 /* UIViewController+.swift */,
+				CE0379432C1E63DA00D72498 /* ldentifierProtocol.swift */,
 				CE0379232C1C3AB200D72498 /* App */,
 				CE0379192C1C23A000D72498 /* Custom */,
 				CE0379292C1C4D4900D72498 /* View */,
@@ -254,10 +263,12 @@
 				CE0379362C1C779100D72498 /* SettingProfileView.swift in Sources */,
 				CE0379382C1C7A4600D72498 /* Profile.swift in Sources */,
 				CE993C772C1B236E0024DAEE /* AppDelegate.swift in Sources */,
+				CE0379422C1E609E00D72498 /* AvatarCollectionViewCell.swift in Sources */,
 				CE03793E2C1E2A2900D72498 /* UIViewController+.swift in Sources */,
 				CE03792F2C1C730500D72498 /* SettingProfileViewController.swift in Sources */,
 				CE0379222C1C3AA100D72498 /* SearchViewController.swift in Sources */,
 				CE03792B2C1C508800D72498 /* OnbordingView.swift in Sources */,
+				CE0379402C1E50E500D72498 /* SettingPictureView.swift in Sources */,
 				CE0379162C1C20E400D72498 /* OnbordingViewController.swift in Sources */,
 				CE0379272C1C3F4B00D72498 /* SettingViewController.swift in Sources */,
 				CE03793A2C1C842600D72498 /* SettingPictureViewController.swift in Sources */,
@@ -265,6 +276,7 @@
 				CE0379202C1C39E000D72498 /* TabBarController.swift in Sources */,
 				CE0379182C1C215200D72498 /* Resource.swift in Sources */,
 				CE993C792C1B236E0024DAEE /* SceneDelegate.swift in Sources */,
+				CE0379442C1E63DA00D72498 /* ldentifierProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
