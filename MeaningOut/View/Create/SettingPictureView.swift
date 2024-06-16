@@ -9,30 +9,23 @@ import UIKit
 
 final class SettingPictureView: UIView {
     var settingImageView = UIImageView()
-    let assistanceView = Profile().assistanceView
+    private let assistanceView = Profile().assistanceView
     
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
     
-    func collectionViewLayout() -> UICollectionViewLayout {
+    private func collectionViewLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
         let sectionSpacing: CGFloat = 20
-        let cellSpacing: CGFloat = 10
+        let cellSpacing: CGFloat = 15
         let width = UIScreen.main.bounds.width - (sectionSpacing * 2) - (cellSpacing * 3)
         
         layout.itemSize = CGSize(width: width/4, height: width/4)
-        layout.minimumLineSpacing = 10
-        layout.minimumInteritemSpacing = 10
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        layout.minimumLineSpacing = 15
+        layout.minimumInteritemSpacing = 15
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         return layout
     }
-    
-//    var selectedIndexPath: IndexPath? {
-//        didSet {
-//            collectionView.reloadData()
-//        }
-//    }
-    var unselectedIndexPath: IndexPath? = nil
-        
+  
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -55,16 +48,16 @@ final class SettingPictureView: UIView {
         settingImageView.clipsToBounds = true
         assistanceView.clipsToBounds = true
     }
-    
+}
+
+extension SettingPictureView {
     private func configureSetting() {
         collectionView.delegate = self
         collectionView.dataSource = self
         
         collectionView.register(AvatarCollectionViewCell.self, forCellWithReuseIdentifier: AvatarCollectionViewCell.identifier)
     }
-}
-
-extension SettingPictureView {
+    
     private func configureHierarchy() {
         [settingImageView, assistanceView, collectionView].forEach { self.addSubview($0) }
     }
@@ -97,34 +90,14 @@ extension SettingPictureView: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AvatarCollectionViewCell.identifier, for: indexPath) as! AvatarCollectionViewCell
         cell.configureData(indexPath)
-//        cell.isSelected = (indexPath == self.selectedIndexPath)
-//        cell.unselectedIndexPath = indexPath
-//        cell.currentIndexPath = self.selectedIndexPath
+
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        settingImageView.image = Profile().settingAvatars[indexPath.row].image
-
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AvatarCollectionViewCell.identifier, for: indexPath) as! AvatarCollectionViewCell
+        let cellList = collectionView.visibleCells as! [AvatarCollectionViewCell]
+        cellList[indexPath.row].updateData(cellList)
         
-        for num in 0...(collectionView.visibleCells.count - 1) {
-            if indexPath.row == num {
-                collectionView.visibleCells[num].isSelected = true
-                cell.updateData(cell: collectionView.visibleCells[num])
-            } else {
-                collectionView.visibleCells[num].isSelected = false
-                cell.updateData(cell: collectionView.visibleCells[num])
-            }
-        }
-        print(indexPath)
-        
-        
-        collectionView.reloadData()
-//        selectedIndexPath = indexPath
-//        settingImageView = Profile().settingAvatars[indexPath.row]
-//        if let cell = collectionView.cellForItem(at: indexPath) as? AvatarCollectionViewCell {
-//            cell.currentIndexPath = indexPath
-//        }
+        settingImageView.image = Meaning.Image.avatars[indexPath.row]
     }
 }
