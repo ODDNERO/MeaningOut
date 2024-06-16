@@ -9,6 +9,7 @@ import UIKit
 
 final class SettingPictureViewController: UIViewController {
     private let settingPictureView = SettingPictureView()
+    var selectedImageView: UIImageView?
     
     override func loadView() {
         super.loadView()
@@ -20,24 +21,9 @@ final class SettingPictureViewController: UIViewController {
         
         settingNavigation(title: "PROFILE SETTING", rightBarItem: nil)
     }
-}
-
-import SwiftUI
-
-struct ViewControllerRepresentable: UIViewControllerRepresentable {
-    typealias UIViewControllerType = SettingPictureViewController
     
-    func makeUIViewController(context: Context) -> UIViewControllerType {
-        return UIViewControllerType()
-    }
-    
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-    }
-}
-
-@available(iOS 13.0.0, *)
-struct ViewPreview: PreviewProvider {
-    static var previews: some View {
-        ViewControllerRepresentable()
+    @objc func backButtonTapped() {
+        navigationController?.popViewController(animated: true)
+        selectedImageView = settingPictureView.settingImageView
     }
 }

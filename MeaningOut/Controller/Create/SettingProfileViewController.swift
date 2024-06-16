@@ -9,7 +9,8 @@ import UIKit
 
 final class SettingProfileViewController: UIViewController {
     private let settingProfileView = SettingProfileView()
-
+    private let settingPictureVC = SettingPictureViewController()
+    
     override func loadView() {
         self.view = settingProfileView
     }
@@ -18,6 +19,13 @@ final class SettingProfileViewController: UIViewController {
         super.viewDidLoad()
         settingNavigation(title: "PROFILE SETTING", rightBarItem: nil)
         configureSetting()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let selectedImageView = settingPictureVC.selectedImageView {
+            settingProfileView.settingImageView = selectedImageView
+        }
     }
 }
 
@@ -31,7 +39,7 @@ extension SettingProfileViewController {
     }
     
     @objc func settingImageViewClicked() {
-        navigationController?.pushViewController(SettingPictureViewController(), animated: true)
+        navigationController?.pushViewController(settingPictureVC, animated: true)
     }
     
     @objc func finishButtonClicked() {
