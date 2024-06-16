@@ -90,12 +90,12 @@ extension SettingPictureView {
 
 extension SettingPictureView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Profile().unselectedAvatars.count
+        return Meaning.Image.avatars.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AvatarCollectionViewCell.identifier, for: indexPath) as! AvatarCollectionViewCell
-        
+//        cell.configureData(indexPath)
         cell.unselectedIndexPath = indexPath
         cell.currentIndexPath = self.selectedIndexPath
         return cell
