@@ -8,25 +8,14 @@
 import UIKit
 
 final class Profile: UIImageView {
-    private let basicAvatars = {
-        let avatars = Meaning.ImageView.avatars
-        avatars.forEach {
-            $0.contentMode = .scaleAspectFill
-            $0.layer.borderWidth = 1
-            $0.layer.borderColor = UIColor.black.cgColor
-            $0.clipsToBounds = true
-        }
-        return avatars
-    }()
-    
-    lazy var unselectedAvatars = {
-        let avatars = self.basicAvatars
+    let unselectedAvatars = {
+        let avatars = AvatarImageView().avatars
         avatars.forEach { $0.alpha = 0.5 }
         return avatars
     }()
     
-    lazy var currentAvatars = {
-        let avatars = self.basicAvatars
+    let currentAvatars = {
+        let avatars = AvatarImageView().avatars
         avatars.forEach {
             $0.layer.borderWidth = 3
             $0.layer.borderColor = Meaning.Color.primary.cgColor
@@ -34,8 +23,8 @@ final class Profile: UIImageView {
         return avatars
     }()
     
-    lazy var settingAvatars = {
-        let avatars = self.basicAvatars
+    let settingAvatars = {
+        let avatars = AvatarImageView().avatars
         avatars.forEach {
             $0.contentMode = .scaleAspectFit
             $0.layer.borderWidth = 5
