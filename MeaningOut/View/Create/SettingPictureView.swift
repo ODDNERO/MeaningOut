@@ -26,11 +26,12 @@ final class SettingPictureView: UIView {
         return layout
     }
     
-    var selectedIndexPath: IndexPath? {
-        didSet {
-            collectionView.reloadData()
-        }
-    }
+//    var selectedIndexPath: IndexPath? {
+//        didSet {
+//            collectionView.reloadData()
+//        }
+//    }
+    var unselectedIndexPath: IndexPath? = nil
         
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -95,15 +96,32 @@ extension SettingPictureView: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AvatarCollectionViewCell.identifier, for: indexPath) as! AvatarCollectionViewCell
-//        cell.configureData(indexPath)
-        cell.unselectedIndexPath = indexPath
-        cell.currentIndexPath = self.selectedIndexPath
+        cell.configureData(indexPath)
+//        cell.isSelected = (indexPath == self.selectedIndexPath)
+//        cell.unselectedIndexPath = indexPath
+//        cell.currentIndexPath = self.selectedIndexPath
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedIndexPath = indexPath
-        settingImageView = Profile().settingAvatars[indexPath.row]
+        settingImageView.image = Profile().settingAvatars[indexPath.row].image
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AvatarCollectionViewCell.identifier, for: indexPath) as! AvatarCollectionViewCell
+        
+        for num in 0...(Meaning.Image.avatars.count - 1) {
+            if indexPath.row == num {
+                collectionView.cellForItem(at: indexPath)?.isSelected = true
+                cell.updateData(cell: collectionView.cellForItem(at: indexPath)!)
+            } else {
+                collectionView.cellForItem(at: [0, num])?.isSelected = false
+                cell.updateData(cell: collectionView.cellForItem(at: [0, num])!)
+            }
+        }
+        print(indexPath)
+        
+        collectionView.reloadData()
+//        selectedIndexPath = indexPath
+//        settingImageView = Profile().settingAvatars[indexPath.row]
 //        if let cell = collectionView.cellForItem(at: indexPath) as? AvatarCollectionViewCell {
 //            cell.currentIndexPath = indexPath
 //        }
