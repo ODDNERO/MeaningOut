@@ -9,7 +9,6 @@ import UIKit
 
 final class SettingPictureViewController: UIViewController {
     private let settingPictureView = SettingPictureView()
-    var selectedImageView: UIImageView?
     
     override func loadView() {
         super.loadView()
@@ -18,12 +17,12 @@ final class SettingPictureViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         settingNavigation(title: "PROFILE SETTING", rightBarItem: nil)
     }
     
-    @objc func backButtonTapped() {
-        navigationController?.popViewController(animated: true)
-        selectedImageView = settingPictureView.settingImageView
+    override func viewWillDisappear(_ animated: Bool) {
+        let avatarImageIndex = findAvatarImageIndex(settingPictureView.settingImageView.image!)
+        UserDefaults.standard.set(avatarImageIndex, forKey: "userImageIndex")
+        UserDefaults.standard.set(true, forKey: "isCache")
     }
 }

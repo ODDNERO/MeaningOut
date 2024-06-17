@@ -24,6 +24,7 @@ final class OnbordingViewController: UIViewController {
     
     override func viewIsAppearing(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
+        UserDefaults.standard.set(false, forKey: "isCache")
     }
 }
 

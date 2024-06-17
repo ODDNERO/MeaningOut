@@ -9,7 +9,6 @@ import UIKit
 
 final class SettingProfileViewController: UIViewController {
     private let settingProfileView = SettingProfileView()
-    private let settingPictureVC = SettingPictureViewController()
     
     override func loadView() {
         self.view = settingProfileView
@@ -23,8 +22,10 @@ final class SettingProfileViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let selectedImageView = settingPictureVC.selectedImageView {
-            settingProfileView.settingImageView = selectedImageView
+        if UserDefaults.standard.bool(forKey: "isCache") {
+            settingProfileView.settingImageView.image = settingProfileView.getUserImage()
+        } else {
+            settingProfileView.settingImageView.image = Meaning.Image.avatars.randomElement()!
         }
     }
 }
@@ -39,7 +40,7 @@ extension SettingProfileViewController {
     }
     
     @objc func settingImageViewClicked() {
-        navigationController?.pushViewController(settingPictureVC, animated: true)
+        navigationController?.pushViewController(SettingPictureViewController(), animated: true)
     }
     
     @objc func finishButtonClicked() {
