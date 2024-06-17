@@ -8,7 +8,7 @@
 import UIKit
 
 final class SettingPictureViewController: UIViewController {
-    private let settingPictureView = SettingPictureView()
+    private let settingPictureView = AvatarPickerView()
     
     override func loadView() {
         super.loadView()

@@ -36,7 +36,6 @@ final class Profile: UIImageView {
     let assistanceView = {
         let image = Meaning.Image.camera
         let imageView = UIImageView(image: image)
-        imageView.contentMode = .scaleAspectFit
         imageView.backgroundColor = Meaning.Color.primary
         imageView.tintColor = .white
         imageView.contentMode = .scaleAspectFit

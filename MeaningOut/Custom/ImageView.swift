@@ -29,7 +29,7 @@ struct AvatarImageView {
         var avatarViews: [UIImageView] = []
         Meaning.Image.avatars.forEach { avatarViews.append(UIImageView(image: $0)) }
         avatarViews.forEach {
-            $0.contentMode = .scaleAspectFill
+            $0.contentMode = .scaleAspectFit
             $0.layer.borderWidth = 1
             $0.layer.borderColor = UIColor.black.cgColor
             $0.clipsToBounds = true

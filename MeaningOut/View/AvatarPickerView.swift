@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SettingPictureView: UIView {
+final class AvatarPickerView: UIView {
     var settingImageView = UIImageView()
     private let assistanceView = Profile().assistanceView
     
@@ -50,7 +50,7 @@ final class SettingPictureView: UIView {
     }
 }
 
-extension SettingPictureView {
+extension AvatarPickerView {
     private func configureSetting() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -82,7 +82,7 @@ extension SettingPictureView {
     }
 }
 
-extension SettingPictureView: UICollectionViewDelegate, UICollectionViewDataSource {
+extension AvatarPickerView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Meaning.Image.avatars.count
     }
