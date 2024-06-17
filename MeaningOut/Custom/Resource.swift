@@ -41,4 +41,34 @@ enum Meaning {
         static let bold15 = UIFont.boldSystemFont(ofSize: 15)
         static let heavy16 = UIFont.systemFont(ofSize: 16, weight: .heavy)
     }
+    
+    enum TextField {
+        static let nickname = {
+            let textField = UITextField()
+            textField.attributedPlaceholder = NSAttributedString(string: "닉네임을 입력해 주세요 :)", attributes: [.foregroundColor: Meaning.Color.gray2])
+            textField.textColor = .black
+            textField.tintColor = Meaning.Color.primary
+            textField.font = Meaning.Font.semi14
+            textField.layer.borderColor = UIColor.clear.cgColor
+            return textField
+        }()
+        
+        static let grayUnderlineView = {
+            let view = UIView()
+            view.backgroundColor = Meaning.Color.gray1
+            return view
+        }()
+        
+        static let blackUnderlineView = {
+            let view = UIView()
+            view.backgroundColor = .black
+            return view
+        }()
+        
+        static let assistLabel = {
+            let label = UILabel()
+            label.font = Meaning.Font.medium13
+            return label
+        }()
+    }
 }

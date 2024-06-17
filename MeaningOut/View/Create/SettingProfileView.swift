@@ -11,27 +11,9 @@ final class SettingProfileView: UIView {
     var settingImageView = UIImageView()
     let assistanceView = Profile().assistanceView
     
-    let textField = {
-        let textField = UITextField()
-        textField.attributedPlaceholder = NSAttributedString(string: "닉네임을 입력해 주세요 :)", attributes: [.foregroundColor: Meaning.Color.gray2])
-        textField.textColor = .black
-        textField.tintColor = Meaning.Color.primary
-        textField.font = Meaning.Font.semi14
-        textField.layer.borderColor = UIColor.clear.cgColor
-        return textField
-    }()
-    
-    let underlineView = {
-        let view = UIView()
-        view.backgroundColor = Meaning.Color.gray1
-        return view
-    }()
-    
-    let assistLabel = {
-        let label = UILabel()
-        label.font = Meaning.Font.medium13
-        return label
-    }()
+    let textField = Meaning.TextField.nickname
+    let underlineView = Meaning.TextField.grayUnderlineView
+    let assistLabel = Meaning.TextField.assistLabel
 
     let finishButton = NextButton(title: "완료")
     
