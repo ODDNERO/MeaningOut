@@ -19,19 +19,18 @@ final class SettingProfileViewController: UIViewController {
         settingNavigation(title: "PROFILE SETTING", rightBarItem: nil)
         configureSetting()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if UserDefaults.standard.bool(forKey: "isCache") {
             settingProfileView.settingImageView.image = settingProfileView.getUserImage()
-        } else {
-            settingProfileView.settingImageView.image = Meaning.Image.avatars.randomElement()!
         }
     }
 }
 
 extension SettingProfileViewController {
     private func configureSetting() {
+        settingProfileView.settingImageView.image = Meaning.Image.avatars.randomElement()!
         settingProfileView.settingImageView.isUserInteractionEnabled = true
         settingProfileView.settingImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(settingImageViewClicked)))
         
