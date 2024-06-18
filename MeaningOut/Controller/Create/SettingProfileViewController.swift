@@ -24,6 +24,8 @@ final class SettingProfileViewController: UIViewController {
         super.viewWillAppear(animated)
         if UserDefaults.standard.bool(forKey: "isCache") {
             settingProfileView.settingImageView.image = settingProfileView.getUserImage()
+        } else {
+            settingProfileView.textField.text = nil
         }
     }
 }
