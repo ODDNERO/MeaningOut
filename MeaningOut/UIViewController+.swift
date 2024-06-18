@@ -44,8 +44,11 @@ extension UIViewController {
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
         guard let sceneDelegate = windowScene.delegate as? SceneDelegate else { return }
         
-        let rootViewController = UINavigationController(rootViewController: VC)
-        sceneDelegate.window?.rootViewController = rootViewController
+        if VC is UITabBarController {
+            sceneDelegate.window?.rootViewController = VC
+        } else {
+            sceneDelegate.window?.rootViewController = UINavigationController(rootViewController: VC)
+        }
         sceneDelegate.window?.makeKeyAndVisible()
     }
 }
