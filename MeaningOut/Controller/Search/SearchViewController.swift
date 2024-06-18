@@ -17,10 +17,9 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         settingNavigation(title: "\(userNickname)'s MEANING OUT", rightBarItem: nil)
-        view.backgroundColor = Meaning.Color.background
     }
 }
 
 extension SearchViewController {
-
+    
 }
