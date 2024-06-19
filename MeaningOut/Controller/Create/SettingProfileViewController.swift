@@ -52,7 +52,16 @@ extension SettingProfileViewController {
         UserDefaults.standard.set(settingProfileView.textField.text, forKey: "userNickname")
         UserDefaults.standard.set(true, forKey: "isUser")
         
+        saveJoinDate()
         designateRootVC(TabBarController())
+    }
+    
+    private func saveJoinDate() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd"
+        let currentDate = dateFormatter.string(from: Date())
+        
+        UserDefaults.standard.set(currentDate, forKey: "userJoinDate")
     }
     
     @objc func isValidNickname(textField: UITextField) -> Bool {
