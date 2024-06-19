@@ -28,6 +28,8 @@
 		CE03796F2C1FF8CE00D72498 /* EditPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03796E2C1FF8CE00D72498 /* EditPictureViewController.swift */; };
 		CE0379722C20088300D72498 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0379712C20088300D72498 /* EditProfileView.swift */; };
 		CE0379742C20116700D72498 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0379732C20116700D72498 /* UIView+.swift */; };
+		CE7F837A2C212702000E3C02 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE7F83792C212702000E3C02 /* Alamofire */; };
+		CE7F837D2C21A7F6000E3C02 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE7F837C2C21A7F6000E3C02 /* IQKeyboardManagerSwift */; };
 		CE993C772C1B236E0024DAEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE993C762C1B236E0024DAEE /* AppDelegate.swift */; };
 		CE993C792C1B236E0024DAEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE993C782C1B236E0024DAEE /* SceneDelegate.swift */; };
 		CE993C802C1B23700024DAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE993C7F2C1B23700024DAEE /* Assets.xcassets */; };
@@ -71,6 +73,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE03791E2C1C2CBD00D72498 /* SnapKit in Frameworks */,
+				CE7F837A2C212702000E3C02 /* Alamofire in Frameworks */,
+				CE7F837D2C21A7F6000E3C02 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +220,8 @@
 			name = MeaningOut;
 			packageProductDependencies = (
 				CE03791D2C1C2CBD00D72498 /* SnapKit */,
+				CE7F83792C212702000E3C02 /* Alamofire */,
+				CE7F837C2C21A7F6000E3C02 /* IQKeyboardManagerSwift */,
 			);
 			productName = MeaningOut;
 			productReference = CE993C732C1B236E0024DAEE /* MeaningOut.app */;
@@ -247,6 +253,8 @@
 			mainGroup = CE993C6A2C1B236E0024DAEE;
 			packageReferences = (
 				CE03791C2C1C2CBD00D72498 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				CE7F83782C212701000E3C02 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				CE7F837B2C21A7F6000E3C02 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = CE993C742C1B236E0024DAEE /* Products */;
 			projectDirPath = "";
@@ -440,9 +448,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3CHY8M792C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MeaningOut/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Meaning Out";
+				INFOPLIST_KEY_CFBundleDisplayName = "김나영";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -472,9 +481,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3CHY8M792C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MeaningOut/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Meaning Out";
+				INFOPLIST_KEY_CFBundleDisplayName = "김나영";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -529,6 +539,22 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		CE7F83782C212701000E3C02 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+		CE7F837B2C21A7F6000E3C02 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -536,6 +562,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE03791C2C1C2CBD00D72498 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		CE7F83792C212702000E3C02 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE7F83782C212701000E3C02 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		CE7F837C2C21A7F6000E3C02 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE7F837B2C21A7F6000E3C02 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
