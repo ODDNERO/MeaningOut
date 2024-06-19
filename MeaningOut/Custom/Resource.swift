@@ -37,9 +37,14 @@ enum Meaning {
     
     enum Font {
         static let medium13 = UIFont.systemFont(ofSize: 13, weight: .medium)
+        static let regular15 = UIFont.systemFont(ofSize: 14, weight: .regular)
+        static let medium15 = UIFont.systemFont(ofSize: 15, weight: .medium)
         static let semi14 = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        static let semi15 = UIFont.systemFont(ofSize: 15, weight: .semibold)
         static let bold15 = UIFont.boldSystemFont(ofSize: 15)
         static let heavy16 = UIFont.systemFont(ofSize: 16, weight: .heavy)
+        static let heavy18 = UIFont.systemFont(ofSize: 18, weight: .heavy)
+        static let heavy20 = UIFont.systemFont(ofSize: 20, weight: .heavy)
     }
     
     enum TextField {
