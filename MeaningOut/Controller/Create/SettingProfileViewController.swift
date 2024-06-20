@@ -74,9 +74,11 @@ extension SettingProfileViewController {
             return false
         }
         
-        guard (Int(text) == nil) else {
-            settingProfileView.assistLabel.text = "닉네임에 숫자는 포함할 수 없어요"
-            return false
+        for character in text {
+            guard !(character.isNumber) else {
+                settingProfileView.assistLabel.text = "닉네임에 숫자는 포함할 수 없어요"
+                return false
+            }
         }
         
         guard (2...9 ~= text.count) else {
