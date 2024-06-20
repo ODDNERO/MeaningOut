@@ -35,10 +35,12 @@ final class Profile: UIImageView {
     
     let assistanceView = {
         let image = Meaning.Image.camera
-        let imageView = UIImageView(image: image)
+        let imageView = UIImageView()
+        
+        imageView.image = image
         imageView.backgroundColor = Meaning.Color.primary
         imageView.tintColor = .white
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .center
         imageView.clipsToBounds = true
         return imageView
     }()

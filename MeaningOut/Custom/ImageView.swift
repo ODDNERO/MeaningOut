@@ -21,13 +21,24 @@ extension Meaning {
             launchView.contentMode = .scaleAspectFill
             return launchView
         }()
+        
+        static let empty = {
+            let launchView = UIImageView(image: Meaning.Image.empty)
+            launchView.contentMode = .scaleAspectFill
+            return launchView
+        }()
     }
 }
 
 struct AvatarImageView {
     let avatars = {
         var avatarViews: [UIImageView] = []
-        Meaning.Image.avatars.forEach { avatarViews.append(UIImageView(image: $0)) }
+        Meaning.Image.avatars.forEach {
+            let image = $0
+            let imageView = UIImageView()
+            imageView.image = image
+            avatarViews.append(imageView)
+        }
         avatarViews.forEach {
             $0.contentMode = .scaleAspectFit
             $0.layer.borderWidth = 1

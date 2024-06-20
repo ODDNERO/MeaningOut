@@ -43,8 +43,8 @@ final class AvatarPickerView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        settingImageView.layer.cornerRadius = settingImageView.bounds.width / 2.0
-        assistanceView.layer.cornerRadius = assistanceView.bounds.width / 2.0
+        settingImageView.layer.cornerRadius = settingImageView.frame.width / 2.0
+        assistanceView.layer.cornerRadius = assistanceView.frame.width / 2.0
         settingImageView.clipsToBounds = true
         assistanceView.clipsToBounds = true
     }

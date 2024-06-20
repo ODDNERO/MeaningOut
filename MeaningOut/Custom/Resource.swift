@@ -21,6 +21,7 @@ enum Meaning {
     enum Image {
         static let logo = UIImage(named: "Logo")
         static let launch = UIImage(named: "launch")
+        static let empty = UIImage(named: "empty")
         static let search = UIImage(systemName: "magnifyingglass")
         static let person = UIImage(systemName: "person")
         static let right = UIImage(systemName: "chevron.right")
@@ -45,6 +46,7 @@ enum Meaning {
         static let heavy16 = UIFont.systemFont(ofSize: 16, weight: .heavy)
         static let heavy18 = UIFont.systemFont(ofSize: 18, weight: .heavy)
         static let heavy20 = UIFont.systemFont(ofSize: 20, weight: .heavy)
+        static let black16 = UIFont.systemFont(ofSize: 16, weight: .black)
     }
     
     enum TextField {
