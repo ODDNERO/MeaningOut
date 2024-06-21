@@ -12,7 +12,7 @@ final class EditProfileView: UIView {
     let assistanceView = Profile().assistanceView
     
     let textField = Meaning.TextField.nickname
-    let underlineView = Meaning.TextField.blackUnderlineView
+    let underlineView = Meaning.Underline.black
     let assistLabel = Meaning.TextField.assistLabel
 
     override init(frame: CGRect) {

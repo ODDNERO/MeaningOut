@@ -18,7 +18,7 @@ final class SearchViewController: UIViewController {
         searchBar.searchBarStyle = .minimal
         return searchBar
     }()
-    private let underlineView = Meaning.TextField.grayUnderlineView
+    private let underlineView = Meaning.Underline.navigationBar
     
     private let emptyImageView = Meaning.ImageView.empty
     private let emptryTextLabel = {
@@ -30,6 +30,25 @@ final class SearchViewController: UIViewController {
         label.font = Meaning.Font.black16
         return label
     }()
+    
+    private let headerView = UIView()
+    private let recentSearchLabel = {
+        let label = UILabel()
+        label.text = "최근 검색"
+        label.textColor = .black
+        label.font = Meaning.Font.black15
+        label.textAlignment = .left
+        return label
+    }()
+    private let removeAllButton = {
+        let button = UIButton()
+        button.setTitle("전체 삭제", for: .normal)
+        button.setTitleColor(Meaning.Color.primary, for: .normal)
+        button.titleLabel?.font = Meaning.Font.medium14
+        button.titleLabel?.textAlignment = .right
+        return button
+    }()
+    private let tableView = UITableView()
     
     private var userSearchWords: [String] {
         get {
@@ -63,6 +82,8 @@ extension SearchViewController: UISearchBarDelegate {
     }
 }
 
+
+//MARK: - UI
 extension SearchViewController {
     private func configureView() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(keyboardDismiss))
@@ -71,25 +92,28 @@ extension SearchViewController {
         searchBar.delegate = self
     }
     
-    func settingView() {
-        switch userSearchWords.isEmpty {
-        case true:
-            emptyImageView.isHidden = false
-            emptryTextLabel.isHidden = false
-        case false:
-            emptyImageView.isHidden = true
-            emptryTextLabel.isHidden = true
-        }
-    }
-    
     @objc func keyboardDismiss() {
         view.endEditing(true)
     }
     
+    private func settingView() {
+        switch userSearchWords.isEmpty {
+        case true:
+            emptyImageView.isHidden = false
+            emptryTextLabel.isHidden = false
+            headerView.isHidden = true
+        case false:
+            emptyImageView.isHidden = true
+            emptryTextLabel.isHidden = true
+            headerView.isHidden = false
+        }
+    }
+    
     private func configureHierarchy() {
-        [searchBar, underlineView, emptyImageView, emptryTextLabel].forEach {
+        [searchBar, underlineView, emptyImageView, emptryTextLabel, headerView, tableView].forEach {
             view.addSubview($0)
         }
+        [recentSearchLabel, removeAllButton].forEach { headerView.addSubview($0) }
     }
     
     private func configureLayout() {
@@ -100,7 +124,7 @@ extension SearchViewController {
         underlineView.snp.makeConstraints {
             $0.top.equalTo(searchBar.snp.bottom).offset(5)
             $0.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
-            $0.height.equalTo(1)
+            $0.height.equalTo(0.5)
         }
         
         emptyImageView.snp.makeConstraints {
@@ -110,6 +134,27 @@ extension SearchViewController {
         emptryTextLabel.snp.makeConstraints {
             $0.centerX.equalTo(view.safeAreaLayoutGuide)
             $0.top.equalTo(emptyImageView.snp.bottom).offset(10)
+            $0.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
+        }
+
+        headerView.snp.makeConstraints {
+            $0.top.equalTo(underlineView.snp.bottom)
+            $0.height.equalTo(50)
+            $0.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
+        }
+        recentSearchLabel.snp.makeConstraints {
+            $0.centerY.equalTo(headerView)
+            $0.leading.centerY.equalTo(headerView).offset(20)
+            $0.centerY.equalTo(headerView)
+        }
+        removeAllButton.snp.makeConstraints {
+            $0.centerY.equalTo(headerView)
+            $0.trailing.centerY.equalTo(headerView).inset(20)
+            $0.centerY.equalTo(headerView)
+        }
+        
+        tableView.snp.makeConstraints {
+            $0.top.equalTo(headerView.snp.bottom)
             $0.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
         }
     }

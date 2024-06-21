@@ -12,7 +12,7 @@ final class SettingProfileView: UIView {
     let assistanceView = Profile().assistanceView
     
     let textField = Meaning.TextField.nickname
-    let underlineView = Meaning.TextField.grayUnderlineView
+    let underlineView = Meaning.Underline.gray
     let assistLabel = Meaning.TextField.assistLabel
 
     let finishButton = NextButton(title: "완료")
