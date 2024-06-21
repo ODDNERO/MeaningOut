@@ -19,8 +19,9 @@ final class SearchViewController: UIViewController {
         return searchBar
     }()
     private let underlineView = Meaning.TextField.grayUnderlineView
+    
     private let emptyImageView = Meaning.ImageView.empty
-    private let textLabel = {
+    private let emptryTextLabel = {
         let label = UILabel()
         label.text = "최근 검색어가 없어요"
         label.numberOfLines = 0
@@ -30,25 +31,48 @@ final class SearchViewController: UIViewController {
         return label
     }()
     
+    private var userSearchWords: [String] {
+        get {
+            return UserDefaults.standard.stringArray(forKey: "userSearchWords") ?? []
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "userSearchWords")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         settingNavigation(title: "\(userNickname)'s MEANING OUT", rightBarItem: nil)
-        view.backgroundColor = Meaning.Color.background
         configureHierarchy()
         configureLayout()
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(keyboardDismiss))
-        self.view.addGestureRecognizer(tap)
+        configureView()
     }
-    
-    @objc func keyboardDismiss() {
-        self.view.endEditing(true)
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchText = searchBar.text, !searchText.isEmpty else { return }
+        userSearchWords.append(searchText)
+        view.endEditing(true)
+        
+        navigationController?.pushViewController(SearchResultViewController(), animated: true)
     }
 }
 
 extension SearchViewController {
+    private func configureView() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(keyboardDismiss))
+        view.addGestureRecognizer(tap)
+        view.backgroundColor = Meaning.Color.background
+        searchBar.delegate = self
+    }
+    
+    @objc func keyboardDismiss() {
+        view.endEditing(true)
+    }
+    
     private func configureHierarchy() {
-        [searchBar, underlineView, emptyImageView, textLabel].forEach {
+        [searchBar, underlineView, emptyImageView, emptryTextLabel].forEach {
             view.addSubview($0)
         }
     }
@@ -58,7 +82,6 @@ extension SearchViewController {
             $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(10)
         }
-        
         underlineView.snp.makeConstraints {
             $0.top.equalTo(searchBar.snp.bottom).offset(5)
             $0.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
@@ -69,8 +92,7 @@ extension SearchViewController {
             $0.centerX.centerY.equalTo(view.safeAreaLayoutGuide)
             $0.width.equalTo(view.safeAreaLayoutGuide).multipliedBy(0.6)
         }
-        
-        textLabel.snp.makeConstraints {
+        emptryTextLabel.snp.makeConstraints {
             $0.centerX.equalTo(view.safeAreaLayoutGuide)
             $0.top.equalTo(emptyImageView.snp.bottom).offset(10)
             $0.horizontalEdges.equalTo(view.safeAreaLayoutGuide)

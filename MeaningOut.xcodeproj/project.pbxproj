@@ -30,6 +30,7 @@
 		CE0379742C20116700D72498 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0379732C20116700D72498 /* UIView+.swift */; };
 		CE7F837A2C212702000E3C02 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE7F83792C212702000E3C02 /* Alamofire */; };
 		CE7F837D2C21A7F6000E3C02 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE7F837C2C21A7F6000E3C02 /* IQKeyboardManagerSwift */; };
+		CE8CEEC72C2614C4001BE6BA /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CEEC62C2614C4001BE6BA /* SearchResultViewController.swift */; };
 		CE993C772C1B236E0024DAEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE993C762C1B236E0024DAEE /* AppDelegate.swift */; };
 		CE993C792C1B236E0024DAEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE993C782C1B236E0024DAEE /* SceneDelegate.swift */; };
 		CE993C802C1B23700024DAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE993C7F2C1B23700024DAEE /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		CE03796E2C1FF8CE00D72498 /* EditPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPictureViewController.swift; sourceTree = "<group>"; };
 		CE0379712C20088300D72498 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		CE0379732C20116700D72498 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		CE8CEEC62C2614C4001BE6BA /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		CE993C732C1B236E0024DAEE /* MeaningOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeaningOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE993C762C1B236E0024DAEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE993C782C1B236E0024DAEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				CE0379212C1C3AA100D72498 /* SearchViewController.swift */,
+				CE8CEEC62C2614C4001BE6BA /* SearchResultViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				CE0379182C1C215200D72498 /* Resource.swift in Sources */,
 				CE993C792C1B236E0024DAEE /* SceneDelegate.swift in Sources */,
 				CE0379442C1E63DA00D72498 /* ldentifierProtocol.swift in Sources */,
+				CE8CEEC72C2614C4001BE6BA /* SearchResultViewController.swift in Sources */,
 				CE03796D2C1FF83C00D72498 /* EditProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
