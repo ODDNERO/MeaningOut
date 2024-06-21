@@ -17,15 +17,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let isUser = UserDefaults.standard.bool(forKey: "isUser")
         
-        if isUser {
+        switch isUser {
+        case true:
             let mainVC = TabBarController()
             self.window?.rootViewController = mainVC
-
-        } else {
+        case false:
             let onbordingVC = UINavigationController(rootViewController: OnbordingViewController())
             self.window?.rootViewController = onbordingVC
         }
-        
         self.window?.makeKeyAndVisible()
     }
 }
