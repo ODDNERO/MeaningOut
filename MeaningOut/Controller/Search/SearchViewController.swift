@@ -47,6 +47,10 @@ final class SearchViewController: UIViewController {
         configureLayout()
         configureView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        settingView()
+    }
 }
 
 extension SearchViewController: UISearchBarDelegate {
@@ -65,6 +69,17 @@ extension SearchViewController {
         view.addGestureRecognizer(tap)
         view.backgroundColor = Meaning.Color.background
         searchBar.delegate = self
+    }
+    
+    func settingView() {
+        switch userSearchWords.isEmpty {
+        case true:
+            emptyImageView.isHidden = false
+            emptryTextLabel.isHidden = false
+        case false:
+            emptyImageView.isHidden = true
+            emptryTextLabel.isHidden = true
+        }
     }
     
     @objc func keyboardDismiss() {
