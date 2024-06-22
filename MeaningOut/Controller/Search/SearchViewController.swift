@@ -46,10 +46,11 @@ final class SearchViewController: UIViewController {
         button.setTitleColor(Meaning.Color.primary, for: .normal)
         button.titleLabel?.font = Meaning.Font.medium14
         button.titleLabel?.textAlignment = .right
+        button.addTarget(self, action: #selector(removeAllButtonClicked), for: .touchUpInside)
         return button
     }()
-    private let tableView = UITableView()
     
+    private let tableView = UITableView()
     private var userSearchWords: [String] {
         get {
             return UserDefaults.standard.stringArray(forKey: "userSearchWords") ?? []
@@ -75,13 +76,37 @@ final class SearchViewController: UIViewController {
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchText = searchBar.text, !searchText.isEmpty else { return }
-        userSearchWords.append(searchText)
+        searchBar.text = nil
         view.endEditing(true)
         
+        userSearchWords.insert(searchText, at: 0)
+        tableView.reloadData()
         navigationController?.pushViewController(SearchResultViewController(), animated: true)
     }
 }
 
+extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+    @objc func removeAllButtonClicked() {
+        UserDefaults.standard.set([], forKey: "userSearchWords")
+        settingView()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return userSearchWords.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "wordCell", for: indexPath)
+        cell.textLabel?.text = userSearchWords[indexPath.row]
+        print("tableView: ", userSearchWords)
+        cell.textLabel?.font = Meaning.Font.medium14
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40
+    }
+}
 
 //MARK: - UI
 extension SearchViewController {
@@ -90,6 +115,10 @@ extension SearchViewController {
         view.addGestureRecognizer(tap)
         view.backgroundColor = Meaning.Color.background
         searchBar.delegate = self
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "wordCell")
+        tableView.separatorColor = .clear
     }
     
     @objc func keyboardDismiss() {
@@ -102,10 +131,12 @@ extension SearchViewController {
             emptyImageView.isHidden = false
             emptryTextLabel.isHidden = false
             headerView.isHidden = true
+            tableView.isHidden = true
         case false:
             emptyImageView.isHidden = true
             emptryTextLabel.isHidden = true
             headerView.isHidden = false
+            tableView.isHidden = false
         }
     }
     
@@ -144,18 +175,16 @@ extension SearchViewController {
         }
         recentSearchLabel.snp.makeConstraints {
             $0.centerY.equalTo(headerView)
-            $0.leading.centerY.equalTo(headerView).offset(20)
-            $0.centerY.equalTo(headerView)
+            $0.leading.equalTo(headerView).offset(20)
         }
         removeAllButton.snp.makeConstraints {
             $0.centerY.equalTo(headerView)
-            $0.trailing.centerY.equalTo(headerView).inset(20)
-            $0.centerY.equalTo(headerView)
+            $0.trailing.equalTo(headerView).inset(20)
         }
         
         tableView.snp.makeConstraints {
             $0.top.equalTo(headerView.snp.bottom)
-            $0.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
+            $0.horizontalEdges.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
 }

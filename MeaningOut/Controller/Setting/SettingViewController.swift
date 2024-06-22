@@ -75,7 +75,7 @@ extension SettingViewController {
     private func configureSetting() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "settingCell")
         tableView.separatorColor = .black
         
         headerView.isUserInteractionEnabled = true
@@ -136,7 +136,7 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "settingCell", for: indexPath)
         cell.textLabel?.text = optionList[indexPath.row]
         cell.textLabel?.font = Meaning.Font.medium15
         return cell
