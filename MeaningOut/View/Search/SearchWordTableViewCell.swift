@@ -59,7 +59,7 @@ extension SearchWordTableViewCell {
         wordLabel.snp.makeConstraints {
             $0.centerY.equalTo(contentView.safeAreaLayoutGuide)
             $0.leading.equalTo(clockImageView.snp.trailing).offset(15)
-            $0.trailing.equalTo(removeButton.snp.leading).inset(20)
+            $0.trailing.equalTo(contentView.safeAreaLayoutGuide).inset(50)
         }
         removeButton.snp.makeConstraints {
             $0.centerY.equalTo(contentView.safeAreaLayoutGuide)
