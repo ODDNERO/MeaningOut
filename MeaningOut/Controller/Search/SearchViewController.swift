@@ -51,12 +51,11 @@ final class SearchViewController: UIViewController {
     }()
     
     private let tableView = UITableView()
-    private var userSearchWords: [String] {
-        get {
-            return UserDefaults.standard.stringArray(forKey: "userSearchWords") ?? []
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: "userSearchWords")
+    private var userSearchWords: [String] = UserDefaults.standard.stringArray(forKey: "userSearchWords") ?? [] {
+        didSet {
+            UserDefaults.standard.set(userSearchWords, forKey: "userSearchWords")
+            tableView.reloadData()
+            settingView()
         }
     }
     
@@ -76,19 +75,16 @@ final class SearchViewController: UIViewController {
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchText = searchBar.text, !searchText.isEmpty else { return }
+        userSearchWords.insert(searchText, at: 0)
         searchBar.text = nil
         view.endEditing(true)
-        
-        userSearchWords.insert(searchText, at: 0)
-        tableView.reloadData()
         navigationController?.pushViewController(SearchResultViewController(), animated: true)
     }
 }
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     @objc func removeAllButtonClicked() {
-        UserDefaults.standard.set([], forKey: "userSearchWords")
-        settingView()
+        userSearchWords = []
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -96,11 +92,20 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "wordCell", for: indexPath)
-        cell.textLabel?.text = userSearchWords[indexPath.row]
-        print("tableView: ", userSearchWords)
-        cell.textLabel?.font = Meaning.Font.medium14
+        let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultTableViewCell.identifier, for: indexPath) as! SearchResultTableViewCell
+        cell.update(word: userSearchWords[indexPath.row])
+        cell.removeButton.tag = indexPath.row
+        cell.removeButton.addTarget(self, action: #selector(removeButtonClicked), for: .touchUpInside)
         return cell
+    }
+    
+    @objc func removeButtonClicked(sender: UIButton) {
+        var searchWords = UserDefaults.standard.stringArray(forKey: "userSearchWords") ?? []
+        userSearchWords.remove(at: sender.tag)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -117,8 +122,8 @@ extension SearchViewController {
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "wordCell")
         tableView.separatorColor = .clear
+        tableView.register(SearchResultTableViewCell.self, forCellReuseIdentifier: SearchResultTableViewCell.identifier)
     }
     
     @objc func keyboardDismiss() {
