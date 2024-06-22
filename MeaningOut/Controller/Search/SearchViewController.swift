@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 final class SearchViewController: UIViewController {
-    private let userNickname = UserDefaults.standard.string(forKey: "userNickname")!
+    private var userNickname = UserDefaults.standard.string(forKey: "userNickname")!
     private let searchBar = {
         let searchBar = UISearchBar()
         searchBar.placeholder = "브랜드, 상품 등을 입력하세요."
@@ -61,7 +61,6 @@ final class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        settingNavigation(title: "\(userNickname)'s MEANING OUT", rightBarItem: nil)
         configureHierarchy()
         configureLayout()
         configureView()
@@ -69,6 +68,8 @@ final class SearchViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        userNickname = UserDefaults.standard.string(forKey: "userNickname")!
+        settingNavigation(title: "\(userNickname)'s MEANING OUT", rightBarItem: nil)
         settingView()
     }
 }
