@@ -26,7 +26,7 @@ enum Meaning {
         static let search = UIImage(systemName: "magnifyingglass")
         static let person = UIImage(systemName: "person")
         static let right = UIImage(systemName: "chevron.right")
-        static let clock = UIImage(systemName: "clock")
+        static let clock = UIImage(systemName: "clock", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
         static let remove = UIImage(systemName: "xmark")
         static let camera = UIImage(systemName: "camera.fill")
         static let avatars = {

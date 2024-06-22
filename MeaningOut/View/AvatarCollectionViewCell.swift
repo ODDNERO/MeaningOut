@@ -50,5 +50,3 @@ final class AvatarCollectionViewCell: UICollectionViewCell {
         }
     }
 }
-
-
