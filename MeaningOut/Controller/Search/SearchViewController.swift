@@ -87,15 +87,22 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         userSearchWords = []
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userSearchWords.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SearchWordTableViewCell.identifier, for: indexPath) as! SearchWordTableViewCell
+        cell.selectionStyle = .none
         cell.update(word: userSearchWords[indexPath.row])
         cell.removeButton.tag = indexPath.row
         cell.removeButton.addTarget(self, action: #selector(removeButtonClicked), for: .touchUpInside)
+        cell.wordLabel.tag = indexPath.row
+        cell.wordLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(wordLabelClicked)))
         return cell
     }
     
@@ -104,12 +111,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         userSearchWords.remove(at: sender.tag)
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    @objc func wordLabelClicked(sender: UILabel) {
         navigationController?.pushViewController(SearchResultViewController(), animated: true)
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40
     }
 }
 

@@ -17,11 +17,12 @@ final class SearchWordTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    private let wordLabel = {
+    let wordLabel = {
         let label = UILabel()
         label.textAlignment = .left
         label.textColor = .black
         label.font = Meaning.Font.medium14
+        label.isUserInteractionEnabled = true
         return label
     }()
     
