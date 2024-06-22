@@ -1,5 +1,5 @@
 //
-//  SearchResultTableViewCell.swift
+//  SearchWordTableViewCell.swift
 //  MeaningOut
 //
 //  Created by NERO on 6/22/24.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class SearchResultTableViewCell: UITableViewCell {
+final class SearchWordTableViewCell: UITableViewCell {
     private let clockImageView = {
         let imageView = UIImageView()
         imageView.image = Meaning.Image.clock
@@ -44,7 +44,7 @@ final class SearchResultTableViewCell: UITableViewCell {
     }
 }
 
-extension SearchResultTableViewCell {
+extension SearchWordTableViewCell {
     func update(word: String) {
         wordLabel.text = word
     }

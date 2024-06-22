@@ -92,7 +92,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultTableViewCell.identifier, for: indexPath) as! SearchResultTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: SearchWordTableViewCell.identifier, for: indexPath) as! SearchWordTableViewCell
         cell.update(word: userSearchWords[indexPath.row])
         cell.removeButton.tag = indexPath.row
         cell.removeButton.addTarget(self, action: #selector(removeButtonClicked), for: .touchUpInside)
@@ -105,7 +105,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        navigationController?.pushViewController(SearchResultViewController(), animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -123,7 +123,7 @@ extension SearchViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorColor = .clear
-        tableView.register(SearchResultTableViewCell.self, forCellReuseIdentifier: SearchResultTableViewCell.identifier)
+        tableView.register(SearchWordTableViewCell.self, forCellReuseIdentifier: SearchWordTableViewCell.identifier)
     }
     
     @objc func keyboardDismiss() {
