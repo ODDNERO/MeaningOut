@@ -68,6 +68,7 @@ final class SearchViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         settingView()
     }
 }
@@ -76,9 +77,11 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchText = searchBar.text, !searchText.isEmpty else { return }
         userSearchWords.insert(searchText, at: 0)
+        let searchResultVC = SearchResultViewController()
+        searchResultVC.searchKeyword = searchBar.text ?? ""
         searchBar.text = nil
         view.endEditing(true)
-        navigationController?.pushViewController(SearchResultViewController(), animated: true)
+        navigationController?.pushViewController(searchResultVC, animated: true)
     }
 }
 
@@ -111,8 +114,10 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         userSearchWords.remove(at: sender.tag)
     }
     
-    @objc func wordLabelClicked(sender: UILabel) {
-        navigationController?.pushViewController(SearchResultViewController(), animated: true)
+    @objc func wordLabelClicked(sender: UITapGestureRecognizer ) {
+        let searchResultVC = SearchResultViewController()
+        searchResultVC.searchKeyword = userSearchWords[sender.view!.tag]
+        navigationController?.pushViewController(searchResultVC, animated: true)
     }
 }
 

@@ -7,11 +7,12 @@
 
 import UIKit
 
-class SearchResultViewController: UIViewController {
-
+final class SearchResultViewController: UIViewController {
+    var searchKeyword: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = Meaning.Color.background
+        settingNavigation(title: searchKeyword, rightBarItem: nil)
     }
 }
