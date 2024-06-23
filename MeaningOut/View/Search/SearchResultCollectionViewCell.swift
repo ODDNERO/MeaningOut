@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 final class SearchResultCollectionViewCell: UICollectionViewCell {
     var productImageView = {
@@ -20,8 +21,8 @@ final class SearchResultCollectionViewCell: UICollectionViewCell {
         let button = UIButton()
         button.layer.cornerRadius = 5
         button.clipsToBounds = true
-        button.setImage(Meaning.Image.unselected, for: .normal)
         button.contentMode = .scaleAspectFit
+        button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         return button
     }()
     private var isFavorite = false
@@ -29,14 +30,14 @@ final class SearchResultCollectionViewCell: UICollectionViewCell {
     private let storeNameLabel = {
         let label = UILabel()
         label.textColor = Meaning.Color.gray1
-        label.font = Meaning.Font.medium13
+        label.font = Meaning.Font.medium12
         label.textAlignment = .left
         return label
     }()
     private let productNameLabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = Meaning.Font.medium14
+        label.font = Meaning.Font.medium13
         label.textAlignment = .left
         label.numberOfLines = 2
         return label
@@ -44,7 +45,7 @@ final class SearchResultCollectionViewCell: UICollectionViewCell {
     private let priceLabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = Meaning.Font.black15
+        label.font = Meaning.Font.heavy16
         label.textAlignment = .left
         return label
     }()
@@ -54,6 +55,8 @@ final class SearchResultCollectionViewCell: UICollectionViewCell {
         [productImageView, favoriteButton, storeNameLabel, productNameLabel, priceLabel].forEach {
             contentView.addSubview($0)
         }
+        configureLayout()
+        configureFavoriteButtonUI()
     }
     
     required init?(coder: NSCoder) {
@@ -62,42 +65,55 @@ final class SearchResultCollectionViewCell: UICollectionViewCell {
 }
 
 extension SearchResultCollectionViewCell {
-    func setClickedFavoriteButtonUI(_ sender: UIButton) {
+    func update(data: Item) {
+        print(data)
+        let url = URL(string: data.image)
+        productImageView.kf.setImage(with: url)
+        storeNameLabel.text = data.mallName
+        productNameLabel.text = cleanProductName
+        priceLabel.text = "\(data.lprice)원"
+    }
+    
+    
+    func favoriteButtonClicked(_ sender: UIButton) {
         isFavorite.toggle()
+        configureFavoriteButtonUI()
+    }
+    
+    func configureFavoriteButtonUI() {
         switch isFavorite {
         case true:
             favoriteButton.setImage(Meaning.Image.selected, for: .normal)
-            favoriteButton.backgroundColor = .white
-            favoriteButton.alpha = 1
+            favoriteButton.backgroundColor = UIColor.white.withAlphaComponent(1.0)
         case false:
             favoriteButton.setImage(Meaning.Image.unselected, for: .normal)
-            favoriteButton.backgroundColor = Meaning.Color.gray2
-            favoriteButton.alpha = 0.5
+            favoriteButton.backgroundColor = Meaning.Color.gray2.withAlphaComponent(0.4)
         }
     }
     
     private func configureLayout() {
         productImageView.snp.makeConstraints {
             $0.top.horizontalEdges.equalTo(contentView.safeAreaLayoutGuide)
+            $0.height.equalTo(200)
         }
         
         favoriteButton.snp.makeConstraints {
-            $0.bottom.trailing.equalTo(contentView.safeAreaLayoutGuide).inset(10)
-            $0.size.equalTo(20)
+            $0.bottom.trailing.equalTo(productImageView).inset(13)
+            $0.size.equalTo(30)
         }
         
         storeNameLabel.snp.makeConstraints {
-            $0.top.equalTo(productImageView.snp.bottom)
+            $0.top.equalTo(productImageView.snp.bottom).offset(7)
             $0.horizontalEdges.equalTo(contentView.safeAreaLayoutGuide)
         }
         
         productNameLabel.snp.makeConstraints {
-            $0.top.equalTo(storeNameLabel.snp.bottom)
+            $0.top.equalTo(storeNameLabel.snp.bottom).offset(4)
             $0.horizontalEdges.equalTo(contentView.safeAreaLayoutGuide)
         }
         
         priceLabel.snp.makeConstraints {
-            $0.top.equalTo(productNameLabel.snp.bottom)
+            $0.top.equalTo(productNameLabel.snp.bottom).offset(4)
             $0.horizontalEdges.equalTo(contentView.safeAreaLayoutGuide)
         }
     }

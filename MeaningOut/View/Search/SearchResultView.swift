@@ -8,7 +8,6 @@
 import UIKit
 
 class SearchResultView: UIView {
-    
     private var searchResultLabel = {
         let label = UILabel()
         label.textColor = Meaning.Color.primary
@@ -64,10 +63,10 @@ class SearchResultView: UIView {
         let cellSpacing: CGFloat = 20
         let width = UIScreen.main.bounds.width - (sectionSpacing * 2) - (cellSpacing * 1)
         
-        layout.itemSize = CGSize(width: width/2, height: width/2)
-        layout.minimumLineSpacing = 15
-        layout.minimumInteritemSpacing = 20
-        layout.sectionInset = UIEdgeInsets(top: 15, left: 20, bottom: 15, right: 20)
+        layout.itemSize = CGSize(width: width/2, height: (width/2) * 1.7)
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 10
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 10, right: 20)
         return layout
     }
     var productList: [Item] = [] {
@@ -142,7 +141,6 @@ extension SearchResultView {
         searchResultLabel.snp.makeConstraints {
             $0.top.horizontalEdges.equalTo(self.safeAreaLayoutGuide).inset(20)
             $0.leading.equalTo(self.safeAreaLayoutGuide).inset(20)
-//            $0.height.equalTo(30)
         }
         
         filterStackView.snp.makeConstraints {
@@ -152,7 +150,7 @@ extension SearchResultView {
         }
 
         collectionView.snp.makeConstraints {
-            $0.top.equalTo(filterStackView.snp.bottom).offset(10)
+            $0.top.equalTo(filterStackView.snp.bottom)
             $0.horizontalEdges.bottom.equalTo(self.safeAreaLayoutGuide)
         }
     }
