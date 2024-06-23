@@ -23,6 +23,8 @@ enum Meaning {
         static let logo = UIImage(named: "Logo")
         static let launch = UIImage(named: "launch")
         static let empty = UIImage(named: "empty")
+        static let selected = UIImage(named: "like_selected")
+        static let unselected = UIImage(named: "like_unselected")
         static let search = UIImage(systemName: "magnifyingglass")
         static let person = UIImage(systemName: "person")
         static let right = UIImage(systemName: "chevron.right")
