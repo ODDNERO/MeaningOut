@@ -127,9 +127,10 @@ extension SearchResultView {
     }
     
     func update(data: ProductDTO) {
-        searchResultLabel.text = "\(data.total)개의 검색 결과"
+        let total = Meaning.Method.formatNumber(data.total)
+        searchResultLabel.text = "\(total)개의 검색 결과"
     }
-    
+
     func setClickedButtonUI(_ sender: UIButton) {
         [accuracySortButton, dateSortButton, highPriceSortButton, lowPriceSortButton].forEach {
             $0.backgroundColor = .clear

@@ -71,7 +71,8 @@ extension SearchResultCollectionViewCell {
         storeNameLabel.text = data.mallName
         let cleanProductName = removeHTMLTags(text: data.title)
         productNameLabel.text = cleanProductName
-        priceLabel.text = "\(data.lprice)원"
+        let price = Meaning.Method.formatNumber(Int(data.lprice)!)
+        priceLabel.text = "\(price)원"
     }
     
     func removeHTMLTags(text: String) -> String {
