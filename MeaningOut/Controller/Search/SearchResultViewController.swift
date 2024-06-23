@@ -9,10 +9,19 @@ import UIKit
 
 final class SearchResultViewController: UIViewController {
     var searchKeyword: String = ""
+    private let searchResultView = SearchResultView()
+     
+    override func loadView() {
+        super.loadView()
+        self.view = searchResultView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = Meaning.Color.background
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         settingNavigation(title: searchKeyword, rightBarItem: nil)
     }
 }
