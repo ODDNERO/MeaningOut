@@ -66,7 +66,6 @@ final class SearchResultCollectionViewCell: UICollectionViewCell {
 
 extension SearchResultCollectionViewCell {
     func update(data: Item) {
-        print(data)
         let url = URL(string: data.image)
         productImageView.kf.setImage(with: url)
         storeNameLabel.text = data.mallName

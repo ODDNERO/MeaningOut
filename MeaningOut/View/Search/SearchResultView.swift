@@ -74,11 +74,12 @@ class SearchResultView: UIView {
             collectionView.reloadData()
         }
     }
+    var page: Int = 1
+    var isEnd = false
+    var nextPage: (() -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        self.backgroundColor = Meaning.Color.background
         configureSetting()
         configureHierarchy()
         configureLayout()
@@ -101,16 +102,28 @@ extension SearchResultView: UICollectionViewDelegate, UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        productList[indexPath.row].link
+//        productList[indexPath.row].link
+    }
+}
+
+extension SearchResultView: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        for item in indexPaths {
+            if productList.count - 2 == item.row && isEnd == false {
+                nextPage?()
+            }
+        }
     }
 }
 
 extension SearchResultView {
     private func configureSetting() {
+        self.backgroundColor = Meaning.Color.background
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(SearchResultCollectionViewCell.self, forCellWithReuseIdentifier: SearchResultCollectionViewCell.identifier)
         setClickedButtonUI(accuracySortButton)
+        collectionView.prefetchDataSource = self
     }
     
     func update(data: ProductDTO) {
