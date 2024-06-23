@@ -69,16 +69,10 @@ extension SearchResultCollectionViewCell {
         let url = URL(string: data.image)
         productImageView.kf.setImage(with: url)
         storeNameLabel.text = data.mallName
-        let cleanProductName = removeHTMLTags(text: data.title)
+        let cleanProductName = Meaning.Method.removeHTMLTags(text: data.title)
         productNameLabel.text = cleanProductName
         let price = Meaning.Method.formatNumber(Int(data.lprice)!)
         priceLabel.text = "\(price)원"
-    }
-    
-    func removeHTMLTags(text: String) -> String {
-        var firstRemoved = text.replacingOccurrences(of: "<b>", with: "")
-        let secondRemoved = firstRemoved.replacingOccurrences(of: "</b>", with: "")
-        return secondRemoved
     }
     
     func favoriteButtonClicked(_ sender: UIButton) {

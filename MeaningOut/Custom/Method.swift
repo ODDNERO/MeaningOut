@@ -14,5 +14,11 @@ extension Meaning {
             formatter.numberStyle = .decimal
             return formatter.string(from: NSNumber(value: number))!
         }
+        
+        static func removeHTMLTags(text: String) -> String {
+            var firstRemoved = text.replacingOccurrences(of: "<b>", with: "")
+            let secondRemoved = firstRemoved.replacingOccurrences(of: "</b>", with: "")
+            return secondRemoved
+        }
     }
 }
