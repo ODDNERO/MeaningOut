@@ -32,7 +32,7 @@ final class SearchResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        setNavigationBarUnderline()
     }
     
     override func viewWillAppear(_ animated: Bool) {

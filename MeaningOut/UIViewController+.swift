@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 extension UIViewController {
     func findAvatarImageIndex(_ inputImage: UIImage) -> Int? {
@@ -28,6 +29,16 @@ extension UIViewController {
         ]
         navigationController?.navigationItem.rightBarButtonItem = rightBarItem
     }
+    
+//    func setNavigationBarUnderline() {
+//        let underlineView = Meaning.Underline.navigationBar
+//        self.view.addSubview(underlineView)
+//        underlineView.snp.makeConstraints {
+//            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+//            $0.leading.trailing.equalTo(view)
+//            $0.height.equalTo(1)
+//        }
+//    }
     
     func alertDeleteAccount(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

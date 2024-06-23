@@ -18,6 +18,7 @@ final class SettingPictureViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         settingNavigation(title: "PROFILE SETTING", rightBarItem: nil)
+//        setNavigationBarUnderline()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

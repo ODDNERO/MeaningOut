@@ -46,6 +46,7 @@ final class SettingViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
         settingNavigation(title: "SETTING", rightBarItem: nil)
+//        setNavigationBarUnderline()
         
         view.backgroundColor = Meaning.Color.background
         userImageView.image = userImageView.getUserImage()

@@ -17,6 +17,7 @@ final class SettingProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         settingNavigation(title: "PROFILE SETTING", rightBarItem: nil)
+//        setNavigationBarUnderline()
         configureSetting()
     }
 
