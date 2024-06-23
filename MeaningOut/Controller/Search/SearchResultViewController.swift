@@ -6,6 +6,14 @@
 //
 
 import UIKit
+import Alamofire
+
+enum Sort: String {
+    case sim
+    case date
+    case asc
+    case dsc
+}
 
 final class SearchResultViewController: UIViewController {
     var searchKeyword: String = ""
