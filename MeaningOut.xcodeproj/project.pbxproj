@@ -32,6 +32,7 @@
 		CE7F837D2C21A7F6000E3C02 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE7F837C2C21A7F6000E3C02 /* IQKeyboardManagerSwift */; };
 		CE8CEEC72C2614C4001BE6BA /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CEEC62C2614C4001BE6BA /* SearchResultViewController.swift */; };
 		CE8CEECA2C264FF2001BE6BA /* SearchWordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8CEEC92C264FF2001BE6BA /* SearchWordTableViewCell.swift */; };
+		CE8CEECF2C27A461001BE6BA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CE8CEECE2C27A461001BE6BA /* Kingfisher */; };
 		CE993C772C1B236E0024DAEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE993C762C1B236E0024DAEE /* AppDelegate.swift */; };
 		CE993C792C1B236E0024DAEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE993C782C1B236E0024DAEE /* SceneDelegate.swift */; };
 		CE993C802C1B23700024DAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE993C7F2C1B23700024DAEE /* Assets.xcassets */; };
@@ -76,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8CEECF2C27A461001BE6BA /* Kingfisher in Frameworks */,
 				CE03791E2C1C2CBD00D72498 /* SnapKit in Frameworks */,
 				CE7F837A2C212702000E3C02 /* Alamofire in Frameworks */,
 				CE7F837D2C21A7F6000E3C02 /* IQKeyboardManagerSwift in Frameworks */,
@@ -236,6 +238,7 @@
 				CE03791D2C1C2CBD00D72498 /* SnapKit */,
 				CE7F83792C212702000E3C02 /* Alamofire */,
 				CE7F837C2C21A7F6000E3C02 /* IQKeyboardManagerSwift */,
+				CE8CEECE2C27A461001BE6BA /* Kingfisher */,
 			);
 			productName = MeaningOut;
 			productReference = CE993C732C1B236E0024DAEE /* MeaningOut.app */;
@@ -269,6 +272,7 @@
 				CE03791C2C1C2CBD00D72498 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				CE7F83782C212701000E3C02 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				CE7F837B2C21A7F6000E3C02 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				CE8CEECD2C27A461001BE6BA /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = CE993C742C1B236E0024DAEE /* Products */;
 			projectDirPath = "";
@@ -571,6 +575,14 @@
 				minimumVersion = 7.0.3;
 			};
 		};
+		CE8CEECD2C27A461001BE6BA /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -588,6 +600,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE7F837B2C21A7F6000E3C02 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		CE8CEECE2C27A461001BE6BA /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE8CEECD2C27A461001BE6BA /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
