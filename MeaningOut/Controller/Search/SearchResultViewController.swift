@@ -56,7 +56,7 @@ extension SearchResultViewController {
             switch response.result {
             case .success(let product):
                 self.productList = product.items
-                self.searchResultView.productData = product
+                self.searchResultView.update(data: product)
             case .failure(let error):
                 print(error)
             }
