@@ -8,6 +8,8 @@
 import UIKit
 
 class SearchResultView: UIView {
+    var navigationController: UINavigationController? = nil
+    
     private var searchResultLabel = {
         let label = UILabel()
         label.textColor = Meaning.Color.primary
@@ -98,11 +100,17 @@ extension SearchResultView: UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchResultCollectionViewCell.identifier, for: indexPath) as! SearchResultCollectionViewCell
         cell.update(data: productList[indexPath.row])
+        
+        cell.productImageView.tag = indexPath.row
+        cell.productImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(productImageClicked)))
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        productList[indexPath.row].link
+    @objc func productImageClicked(sender: UITapGestureRecognizer) {
+    let productWebVC = ProductWebViewController()
+        productWebVC.selectedProductName = productList[sender.view!.tag].title
+        productWebVC.productURL = productList[sender.view!.tag].link
+        navigationController?.pushViewController(productWebVC, animated: true)
     }
 }
 

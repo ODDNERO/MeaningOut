@@ -55,6 +55,8 @@ final class SearchResultViewController: UIViewController {
         settingNavigation(title: searchKeyword, rightBarItem: nil)
         requestProductData(sort: .sim)
         incrementPage()
+        
+        searchResultView.navigationController = self.navigationController
     }
 }
 
