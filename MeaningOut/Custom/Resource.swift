@@ -40,6 +40,7 @@ enum Meaning {
     }
     
     enum Font {
+        static let medium12 = UIFont.systemFont(ofSize: 12, weight: .medium)
         static let medium13 = UIFont.systemFont(ofSize: 13, weight: .medium)
         static let medium14 = UIFont.systemFont(ofSize: 14, weight: .medium)
         static let regular15 = UIFont.systemFont(ofSize: 14, weight: .regular)
