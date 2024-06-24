@@ -40,13 +40,9 @@ extension UIViewController {
 //        }
 //    }
     
-    func alertDeleteAccount(title: String, message: String) {
+    func showAlert(title: String, message: String, okText: String, completionHandler: @escaping () -> Void) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "확인", style: .destructive) { _ in
-            self.designateRootVC(OnbordingViewController())
-            UserDefaults.standard.set(false, forKey: "isUser")
-            UserDefaults.standard.set([], forKey: "userSearchWords")
-        }
+        let ok = UIAlertAction(title: okText, style: .destructive) { _ in completionHandler() }
         let cancel = UIAlertAction(title: "취소", style: .cancel)
         alert.addAction(ok)
         alert.addAction(cancel)
