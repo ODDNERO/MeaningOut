@@ -19,6 +19,12 @@ extension UIViewController {
     }
     
     func settingNavigation(title: String, rightBarItem: UIBarButtonItem?) {
+        let appearance = UINavigationBarAppearance()
+        
+        appearance.configureWithOpaqueBackground()
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.standardAppearance = appearance
+    
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.shadowImage = nil
         navigationItem.title = title
