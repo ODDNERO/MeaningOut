@@ -18,7 +18,6 @@ class EditPictureViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         settingNavigation(title: "EDIT PROFILE", rightBarItem: nil)
-//        setNavigationBarUnderline()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

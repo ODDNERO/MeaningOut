@@ -18,7 +18,6 @@ final class EditProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         settingNavigation(title: "EDIT PROFILE", rightBarItem: nil)
-//        setNavigationBarUnderline()
         configureSetting()
     }
 

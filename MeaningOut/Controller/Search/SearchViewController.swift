@@ -70,6 +70,7 @@ final class SearchViewController: UIViewController {
         super.viewWillAppear(animated)
         userNickname = UserDefaults.standard.string(forKey: "userNickname")!
         settingNavigation(title: "\(userNickname)'s MEANING OUT", rightBarItem: nil)
+        removeNavigationBarUnderline()
         settingView()
     }
 }

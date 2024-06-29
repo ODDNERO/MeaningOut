@@ -19,32 +19,25 @@ extension UIViewController {
     }
     
     func settingNavigation(title: String, rightBarItem: UIBarButtonItem?) {
-        let appearance = UINavigationBarAppearance()
-        
-        appearance.configureWithOpaqueBackground()
-        navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        navigationController?.navigationBar.standardAppearance = appearance
-    
         navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationBar.shadowImage = nil
         navigationItem.title = title
         navigationController?.navigationBar.tintColor = .black
         navigationItem.backButtonTitle = ""
-        navigationController?.navigationBar.titleTextAttributes = [
-            .foregroundColor: UIColor.black
-        ]
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
         navigationController?.navigationItem.rightBarButtonItem = rightBarItem
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground() //underline
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.standardAppearance = appearance
     }
     
-//    func setNavigationBarUnderline() {
-//        let underlineView = Meaning.Underline.navigationBar
-//        self.view.addSubview(underlineView)
-//        underlineView.snp.makeConstraints {
-//            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-//            $0.leading.trailing.equalTo(view)
-//            $0.height.equalTo(1)
-//        }
-//    }
+    func removeNavigationBarUnderline() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithTransparentBackground()
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.standardAppearance = appearance
+    }
     
     func showAlert(title: String, message: String, okText: String, completionHandler: @escaping () -> Void) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
