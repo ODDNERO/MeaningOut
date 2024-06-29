@@ -43,6 +43,7 @@
 		CE993C802C1B23700024DAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE993C7F2C1B23700024DAEE /* Assets.xcassets */; };
 		CE993C832C1B23700024DAEE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CE993C822C1B23700024DAEE /* Base */; };
 		CE993C8B2C1B2AB60024DAEE /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE993C8A2C1B2AB60024DAEE /* APIKey.swift */; };
+		CEA87F3B2C305CD400FAFD45 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA87F3A2C305CD400FAFD45 /* Error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		CE993C822C1B23700024DAEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE993C842C1B23700024DAEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE993C8A2C1B2AB60024DAEE /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		CEA87F3A2C305CD400FAFD45 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				CE03791A2C1C247300D72498 /* NextButton.swift */,
 				CE0379372C1C7A4600D72498 /* Profile.swift */,
 				CE8CEED42C2863DF001BE6BA /* Method.swift */,
+				CEA87F3A2C305CD400FAFD45 /* Error.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				CE8CEED72C286848001BE6BA /* ProductWebViewController.swift in Sources */,
 				CE0379422C1E609E00D72498 /* AvatarCollectionViewCell.swift in Sources */,
 				CE03793E2C1E2A2900D72498 /* UIViewController+.swift in Sources */,
+				CEA87F3B2C305CD400FAFD45 /* Error.swift in Sources */,
 				CE03792F2C1C730500D72498 /* SettingProfileViewController.swift in Sources */,
 				CE0379222C1C3AA100D72498 /* SearchViewController.swift in Sources */,
 				CE03792B2C1C508800D72498 /* OnbordingView.swift in Sources */,

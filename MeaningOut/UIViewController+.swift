@@ -9,6 +9,25 @@ import UIKit
 import SnapKit
 
 extension UIViewController {
+    
+    func validateNicknameError(textField: UITextField) throws {
+        guard let text = textField.text else {
+            throw InputValidation.emptyText
+        }
+        let bannedStrings: CharacterSet = ["@", "#", "$", "%"]
+        guard (text.rangeOfCharacter(from: bannedStrings) == nil) else {
+            throw InputValidation.invalidSpecialCharacter
+        }
+        for character in text {
+            guard !(character.isNumber) else {
+                throw InputValidation.invalidInt
+            }
+        }
+        guard (2...9 ~= text.count) else {
+            throw InputValidation.InvalidLength
+        }
+    }
+    
     func findAvatarImageIndex(_ inputImage: UIImage) -> Int? {
         for (index, image) in Meaning.Image.avatars.enumerated() {
             if image == inputImage {
