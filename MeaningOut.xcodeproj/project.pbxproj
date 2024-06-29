@@ -491,7 +491,7 @@
 				DEVELOPMENT_TEAM = 3CHY8M792C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MeaningOut/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "김나영";
+				INFOPLIST_KEY_CFBundleDisplayName = MeaningOut;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -524,7 +524,7 @@
 				DEVELOPMENT_TEAM = 3CHY8M792C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MeaningOut/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "김나영";
+				INFOPLIST_KEY_CFBundleDisplayName = MeaningOut;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

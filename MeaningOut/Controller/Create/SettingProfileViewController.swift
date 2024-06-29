@@ -38,6 +38,7 @@ extension SettingProfileViewController {
         
         settingProfileView.finishButton.addTarget(self, action: #selector(finishButtonClicked), for: .touchUpInside)
         settingProfileView.textField.addTarget(self, action: #selector(isValidNickname), for: .editingChanged)
+        settingProfileView.assistLabel.text = ""
     }
     
     @objc func settingImageViewClicked() {
