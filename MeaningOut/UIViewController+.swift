@@ -9,6 +9,31 @@ import UIKit
 import SnapKit
 
 extension UIViewController {
+    func setNicknameValidationResult(textField: UITextField, changeTextLabel: UILabel) -> Bool {
+        changeTextLabel.textColor = Meaning.Color.primary
+        do {
+            try validateNicknameError(textField: textField)
+        } catch {
+            switch error {
+            case InputValidation.emptyText:
+                return false
+            case InputValidation.invalidSpecialCharacter:
+                changeTextLabel.text = "닉네임에 @, #, $, % 는 포함할 수 없어요"
+                return false
+            case InputValidation.invalidInt:
+                changeTextLabel.text = "닉네임에 숫자는 포함할 수 없어요"
+                return false
+            case InputValidation.InvalidLength:
+                changeTextLabel.text = "2글자 이상 10글자 미만으로 설정해 주세요"
+                return false
+            default:
+                return false
+            }
+        }
+        changeTextLabel.textColor = .black
+        changeTextLabel.text = "사용 가능한 닉네임입니다 :D"
+        return true
+    }
     
     func validateNicknameError(textField: UITextField) throws {
         guard let text = textField.text else {
