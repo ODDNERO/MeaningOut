@@ -20,7 +20,7 @@ enum Meaning {
     }
     
     enum Image {
-        static let logo = UIImage(named: "appLogo")
+        static let logo = UIImage(named: "Logo")
         static let launch = UIImage(named: "launch")
         static let empty = UIImage(named: "empty")
         static let selected = UIImage(named: "like_selected")
