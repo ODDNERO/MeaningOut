@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ProductDTO: Decodable {
+struct Product: Decodable {
     let total, start, display: Int
     let items: [Item]
 }

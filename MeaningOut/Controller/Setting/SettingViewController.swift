@@ -77,6 +77,7 @@ extension SettingViewController {
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "settingCell")
         tableView.separatorColor = .black
+        tableView.separatorStyle = .none
         
         headerView.isUserInteractionEnabled = true
         headerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(headerViewClicked)))
