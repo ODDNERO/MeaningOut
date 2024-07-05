@@ -141,6 +141,7 @@ extension SettingViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "settingCell", for: indexPath)
         cell.textLabel?.text = optionList[indexPath.row]
         cell.textLabel?.font = Meaning.Font.medium15
+        cell.selectionStyle = .none
         return cell
     }
     

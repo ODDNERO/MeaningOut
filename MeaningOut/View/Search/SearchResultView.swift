@@ -64,7 +64,7 @@ class SearchResultView: UIView {
         let width = UIScreen.main.bounds.width - (sectionSpacing * 2) - (cellSpacing * 1)
         
         layout.itemSize = CGSize(width: width/2, height: (width/2) * 1.7)
-        layout.minimumLineSpacing = 10
+        layout.minimumLineSpacing = 25
         layout.minimumInteritemSpacing = 10
         layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 10, right: 20)
         return layout
@@ -120,7 +120,7 @@ extension SearchResultView {
         filterStackView.snp.makeConstraints {
             $0.top.equalTo(searchResultLabel.snp.bottom).offset(12)
             $0.leading.equalTo(self.safeAreaLayoutGuide).inset(20)
-            $0.height.equalTo(50)
+            $0.height.equalTo(45)
         }
         collectionView.snp.makeConstraints {
             $0.top.equalTo(filterStackView.snp.bottom)

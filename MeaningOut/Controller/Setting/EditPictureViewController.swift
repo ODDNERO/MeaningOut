@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EditPictureViewController: UIViewController {
+final class EditPictureViewController: UIViewController {
     private let editPictureView = AvatarPickerView()
     
     override func loadView() {
