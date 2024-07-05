@@ -18,7 +18,7 @@ final class SearchResultCollectionViewCell: UICollectionViewCell {
         imageView.isUserInteractionEnabled = true
         return imageView
     }()
-    private var favoriteButton = {
+    var favoriteButton = {
         let button = UIButton()
         button.layer.cornerRadius = 5
         button.clipsToBounds = true
@@ -26,7 +26,7 @@ final class SearchResultCollectionViewCell: UICollectionViewCell {
         button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         return button
     }()
-    private var isFavorite = false
+    var isFavorite = false
     
     private let storeNameLabel = {
         let label = UILabel()
@@ -60,6 +60,12 @@ final class SearchResultCollectionViewCell: UICollectionViewCell {
         configureFavoriteButtonUI()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        isFavorite = false
+        configureFavoriteButtonUI()
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -76,10 +82,6 @@ extension SearchResultCollectionViewCell {
         priceLabel.text = "\(price)원"
     }
     
-    func favoriteButtonClicked(_ sender: UIButton) {
-        isFavorite.toggle()
-        configureFavoriteButtonUI()
-    }
     
     func configureFavoriteButtonUI() {
         switch isFavorite {
