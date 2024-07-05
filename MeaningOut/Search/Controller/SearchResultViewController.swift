@@ -110,6 +110,30 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
     @objc func wishButtonClicked(_ sender: UIButton) {
         }
     }
+    
+    private func makeWishItemData(index: Int) -> (WishItem, String) {
+        let selectedItemID = productList[index].productId
+        let selectedItemTitle = Meaning.Method.removeHTMLTags(text: productList[index].title)
+        let selectedItemImageString = productList[index].image
+        let selectedItemPrice = Meaning.Method.formatNumber(Int(productList[index].lprice)!) + "원"
+        let selectedItemMall = productList[index].mallName
+        let selectedItemLink = productList[index].link
+        let wishDate = DateFormatter.customFormatter.string(from: Date())
+        
+        print("Selected Item ID: \(selectedItemID)")
+        print("Selected Item Title: \(selectedItemTitle)")
+        print("Selected Item Price: \(selectedItemPrice)")
+        print("Wish Date: \(wishDate)")
+        
+        return (WishItem(productID: selectedItemID,
+                        title: selectedItemTitle,
+                        imageString: selectedItemImageString,
+                        price: selectedItemPrice,
+                        mallName: selectedItemMall,
+                        link: selectedItemLink,
+                        wishDate: wishDate), 
+                selectedItemID)
+    }
 }
 
 extension SearchResultViewController: UICollectionViewDataSourcePrefetching {
