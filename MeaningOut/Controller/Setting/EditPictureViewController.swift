@@ -11,7 +11,6 @@ class EditPictureViewController: UIViewController {
     private let editPictureView = AvatarPickerView()
     
     override func loadView() {
-        super.loadView()
         self.view = editPictureView
     }
     
@@ -21,6 +20,7 @@ class EditPictureViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         let avatarImageIndex = findAvatarImageIndex(editPictureView.settingImageView.image!)
         UserDefaults.standard.set(avatarImageIndex, forKey: "userImageIndex")
         UserDefaults.standard.set(true, forKey: "isModified")

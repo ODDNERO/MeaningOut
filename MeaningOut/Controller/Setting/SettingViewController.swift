@@ -65,6 +65,7 @@ final class SettingViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         userImageView.layoutIfNeeded()
         userImageView.layer.cornerRadius = userImageView.bounds.width / 2.0
         userImageView.clipsToBounds = true

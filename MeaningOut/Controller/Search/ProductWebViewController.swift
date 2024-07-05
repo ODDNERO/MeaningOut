@@ -29,6 +29,7 @@ final class ProductWebViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         settingNavigation(title: cleanedTitle, rightBarItem: nil)
     }
 }

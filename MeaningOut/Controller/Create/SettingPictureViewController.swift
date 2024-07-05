@@ -11,7 +11,6 @@ final class SettingPictureViewController: UIViewController {
     private let settingPictureView = AvatarPickerView()
     
     override func loadView() {
-        super.loadView()
         self.view = settingPictureView
     }
     
@@ -21,6 +20,7 @@ final class SettingPictureViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         let avatarImageIndex = findAvatarImageIndex(settingPictureView.settingImageView.image!)
         UserDefaults.standard.set(avatarImageIndex, forKey: "userImageIndex")
         UserDefaults.standard.set(true, forKey: "isCache")

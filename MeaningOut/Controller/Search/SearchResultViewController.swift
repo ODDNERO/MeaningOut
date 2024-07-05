@@ -24,7 +24,6 @@ final class SearchResultViewController: UIViewController {
     private var isEnd = false
     
     override func loadView() {
-        super.loadView()
         self.view = searchResultView
     }
     
@@ -34,6 +33,7 @@ final class SearchResultViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         settingNavigation(title: searchKeyword, rightBarItem: nil)
         SearchManager.shared.requestProductData(searchKeyword, sort: .sim, itemsPerPage: itemsPerPage, start: startData) { product, error in
             if let error {
