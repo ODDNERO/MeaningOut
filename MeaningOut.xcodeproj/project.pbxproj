@@ -33,6 +33,7 @@
 		CE59E6092C382FE900A302B0 /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59E6082C382FE900A302B0 /* WishListView.swift */; };
 		CE59E6152C383A3100A302B0 /* WishItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59E6142C383A3100A302B0 /* WishItem.swift */; };
 		CE59E61A2C383AB400A302B0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE59E6192C383AB400A302B0 /* RealmSwift */; };
+		CE59E61E2C384A5E00A302B0 /* DateFormatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59E61D2C384A5E00A302B0 /* DateFormatter+.swift */; };
 		CE6826442C32130B0084402B /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6826432C32130B0084402B /* SearchManager.swift */; };
 		CE6826472C32161F0084402B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6826462C32161F0084402B /* NetworkError.swift */; };
 		CE7F837A2C212702000E3C02 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE7F83792C212702000E3C02 /* Alamofire */; };
@@ -78,6 +79,7 @@
 		CE59E6042C382EAC00A302B0 /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
 		CE59E6082C382FE900A302B0 /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
 		CE59E6142C383A3100A302B0 /* WishItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishItem.swift; sourceTree = "<group>"; };
+		CE59E61D2C384A5E00A302B0 /* DateFormatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+.swift"; sourceTree = "<group>"; };
 		CE6826432C32130B0084402B /* SearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchManager.swift; sourceTree = "<group>"; };
 		CE6826462C32161F0084402B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		CE8CEEC62C2614C4001BE6BA /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				CE0379732C20116700D72498 /* UIView+.swift */,
 				CE03793D2C1E2A2900D72498 /* UIViewController+.swift */,
 				CE0379432C1E63DA00D72498 /* ldentifierProtocol.swift */,
+				CE59E61D2C384A5E00A302B0 /* DateFormatter+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				CE6826472C32161F0084402B /* NetworkError.swift in Sources */,
 				CE8CEED72C286848001BE6BA /* ProductWebViewController.swift in Sources */,
 				CE0379422C1E609E00D72498 /* AvatarCollectionViewCell.swift in Sources */,
+				CE59E61E2C384A5E00A302B0 /* DateFormatter+.swift in Sources */,
 				CE03793E2C1E2A2900D72498 /* UIViewController+.swift in Sources */,
 				CEA87F3B2C305CD400FAFD45 /* Error.swift in Sources */,
 				CE03792F2C1C730500D72498 /* SettingProfileViewController.swift in Sources */,
