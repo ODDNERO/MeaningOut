@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Alamofire
 
 final class SearchResultViewController: UIViewController {
     var searchKeyword: String = ""
@@ -27,8 +26,8 @@ final class SearchResultViewController: UIViewController {
         }
     }
     
-    lazy var totalPages = (totalCount + itemsPerPage - 1) / itemsPerPage
-    var page: Int = 1 {
+    private lazy var totalPages = (totalCount + itemsPerPage - 1) / itemsPerPage
+    private var page: Int = 1 {
         didSet {
             searchResultView.page = self.page
         }
@@ -45,7 +44,14 @@ final class SearchResultViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         settingNavigation(title: searchKeyword, rightBarItem: nil)
-        requestProductData(sort: .sim)
+        SearchManager.shared.requestProductData(searchKeyword, sort: .sim, itemsPerPage: itemsPerPage, start: startData) { product, error in
+            if let error {
+                print(error)
+            } else {
+                guard let product else { return }
+                self.paginateData(data: product)
+            }
+        }
         incrementPage()
         
         searchResultView.navigationController = self.navigationController
@@ -53,44 +59,29 @@ final class SearchResultViewController: UIViewController {
 }
 
 extension SearchResultViewController {
-    func incrementPage() {
+    private func incrementPage() {
         searchResultView.nextPage = {
             self.page += 1
             self.startData += self.itemsPerPage
-            self.requestProductData(sort: .sim)
-            print("startData: ", self.startData)
-        }
-    }
-        
-    func requestProductData(sort: Sort) {
-        let url = NaverAPI.baseURL
-        let header: HTTPHeaders = ["X-Naver-Client-Id": NaverAPI.clientID,
-                                   "X-Naver-Client-Secret": NaverAPI.clientSecret]
-        let parameter: Parameters = ["query": searchKeyword,
-                                     "sort": sort.rawValue,
-                                     "display": itemsPerPage,
-                                     "start": startData]
-        
-        AF.request(url, method: .get,
-                   parameters: parameter,
-                   headers: header)
-        .responseDecodable(of: Product.self) { response in
-            switch response.result {
-            case .success(let product):
-                self.totalCount = product.total
-                
-                if self.page == 1 {
-                    self.productList = product.items
+            SearchManager.shared.requestProductData(self.searchKeyword, sort: .sim, itemsPerPage: self.itemsPerPage, start: self.startData) { product, error in
+                if let error {
+                    print(error)
                 } else {
-                    self.productList.append(contentsOf: product.items)
+                    guard let product else { return }
+                    self.paginateData(data: product)
                 }
-                print("productList.count: ", self.productList.count)
-                self.searchResultView.update(data: product)
-                self.isEnd = self.page == self.totalPages
-
-            case .failure(let error):
-                print(error)
             }
         }
+    }
+    
+    private func paginateData(data: Product) {
+        self.totalCount = data.total
+        if self.page == 1 {
+            self.productList = data.items
+        } else {
+            self.productList.append(contentsOf: data.items)
+        }
+        self.searchResultView.update(data: data)
+        self.isEnd = self.page == self.totalPages
     }
 }
