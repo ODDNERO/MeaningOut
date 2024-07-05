@@ -31,6 +31,7 @@
 		CE59E6032C38106200A302B0 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59E6022C38106200A302B0 /* SearchView.swift */; };
 		CE59E6052C382EAC00A302B0 /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59E6042C382EAC00A302B0 /* WishListViewController.swift */; };
 		CE59E6092C382FE900A302B0 /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59E6082C382FE900A302B0 /* WishListView.swift */; };
+		CE59E61A2C383AB400A302B0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE59E6192C383AB400A302B0 /* RealmSwift */; };
 		CE6826442C32130B0084402B /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6826432C32130B0084402B /* SearchManager.swift */; };
 		CE6826472C32161F0084402B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6826462C32161F0084402B /* NetworkError.swift */; };
 		CE7F837A2C212702000E3C02 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE7F83792C212702000E3C02 /* Alamofire */; };
@@ -102,6 +103,7 @@
 				CE8CEECF2C27A461001BE6BA /* Kingfisher in Frameworks */,
 				CE03791E2C1C2CBD00D72498 /* SnapKit in Frameworks */,
 				CE7F837A2C212702000E3C02 /* Alamofire in Frameworks */,
+				CE59E61A2C383AB400A302B0 /* RealmSwift in Frameworks */,
 				CE7F837D2C21A7F6000E3C02 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,6 +330,7 @@
 				CE7F83792C212702000E3C02 /* Alamofire */,
 				CE7F837C2C21A7F6000E3C02 /* IQKeyboardManagerSwift */,
 				CE8CEECE2C27A461001BE6BA /* Kingfisher */,
+				CE59E6192C383AB400A302B0 /* RealmSwift */,
 			);
 			productName = MeaningOut;
 			productReference = CE993C732C1B236E0024DAEE /* MeaningOut.app */;
@@ -362,6 +365,7 @@
 				CE7F83782C212701000E3C02 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				CE7F837B2C21A7F6000E3C02 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				CE8CEECD2C27A461001BE6BA /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				CE59E6182C383AB400A302B0 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = CE993C742C1B236E0024DAEE /* Products */;
 			projectDirPath = "";
@@ -659,6 +663,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		CE59E6182C383AB400A302B0 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.52.1;
+			};
+		};
 		CE7F83782C212701000E3C02 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -690,6 +702,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE03791C2C1C2CBD00D72498 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		CE59E6192C383AB400A302B0 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE59E6182C383AB400A302B0 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 		CE7F83792C212702000E3C02 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
