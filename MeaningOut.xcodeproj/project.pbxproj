@@ -34,6 +34,7 @@
 		CE59E6152C383A3100A302B0 /* WishItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59E6142C383A3100A302B0 /* WishItem.swift */; };
 		CE59E6172C383A5B00A302B0 /* WishItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59E6162C383A5B00A302B0 /* WishItemRepository.swift */; };
 		CE59E61A2C383AB400A302B0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE59E6192C383AB400A302B0 /* RealmSwift */; };
+		CE59E61B2C38415800A302B0 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = CE59E6192C383AB400A302B0 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		CE59E61E2C384A5E00A302B0 /* DateFormatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59E61D2C384A5E00A302B0 /* DateFormatter+.swift */; };
 		CE6826442C32130B0084402B /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6826432C32130B0084402B /* SearchManager.swift */; };
 		CE6826472C32161F0084402B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6826462C32161F0084402B /* NetworkError.swift */; };
@@ -54,6 +55,20 @@
 		CE993C8B2C1B2AB60024DAEE /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE993C8A2C1B2AB60024DAEE /* APIKey.swift */; };
 		CEA87F3B2C305CD400FAFD45 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA87F3A2C305CD400FAFD45 /* Error.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CE59E61C2C38415800A302B0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CE59E61B2C38415800A302B0 /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CE0379152C1C20E400D72498 /* OnbordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbordingViewController.swift; sourceTree = "<group>"; };
@@ -336,6 +351,7 @@
 				CE993C6F2C1B236E0024DAEE /* Sources */,
 				CE993C702C1B236E0024DAEE /* Frameworks */,
 				CE993C712C1B236E0024DAEE /* Resources */,
+				CE59E61C2C38415800A302B0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
