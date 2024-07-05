@@ -36,10 +36,15 @@ final class WishItemRepository {
         }
     }
     
-    func deleteItem(_ data: WishItem) {
+    func deleteItem(_ deleteItemProductID: String) {
+        let filter = realm.objects(WishItem.self).where {
+            $0.productID.contains(deleteItemProductID)
+        }
+        guard let item = filter.first else { return }
+        
         do {
             try realm.write {
-                realm.delete(data)
+                realm.delete(item)
             }
         } catch {
             print("Delete Error: \(error)")
