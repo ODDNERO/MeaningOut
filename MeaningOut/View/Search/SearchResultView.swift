@@ -134,7 +134,7 @@ extension SearchResultView {
         collectionView.prefetchDataSource = self
     }
     
-    func update(data: ProductDTO) {
+    func update(data: Product) {
         let total = Meaning.Method.formatNumber(data.total)
         searchResultLabel.text = "\(total)개의 검색 결과"
     }

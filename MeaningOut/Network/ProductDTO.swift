@@ -1,5 +1,5 @@
 //
-//  ProductDTO.swift
+//  Product.swift
 //  MeaningOut
 //
 //  Created by NERO on 6/23/24.

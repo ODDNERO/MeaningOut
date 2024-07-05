@@ -8,13 +8,6 @@
 import UIKit
 import Alamofire
 
-enum Sort: String {
-    case sim
-    case date
-    case asc
-    case dsc
-}
-
 final class SearchResultViewController: UIViewController {
     var searchKeyword: String = ""
     private let searchResultView = SearchResultView()
@@ -81,7 +74,7 @@ extension SearchResultViewController {
         AF.request(url, method: .get,
                    parameters: parameter,
                    headers: header)
-        .responseDecodable(of: ProductDTO.self) { response in
+        .responseDecodable(of: Product.self) { response in
             switch response.result {
             case .success(let product):
                 self.totalCount = product.total
