@@ -119,6 +119,7 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
                 repository.createItem(data.0)
                 cell.configureWishButtonUI(true)
             }
+            print(repository.readAllItem())
         }
     }
     

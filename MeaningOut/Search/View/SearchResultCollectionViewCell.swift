@@ -56,13 +56,7 @@ final class SearchResultCollectionViewCell: UICollectionViewCell {
             contentView.addSubview($0)
         }
         configureLayout()
-        configureWishButtonUI(false) //임시
     }
-    
-//    override func prepareForReuse() {
-//        super.prepareForReuse()
-//        configureWishButtonUI()
-//    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -78,6 +72,13 @@ extension SearchResultCollectionViewCell {
         productNameLabel.text = cleanProductName
         let price = Meaning.Method.formatNumber(Int(data.lprice)!)
         priceLabel.text = "\(price)원"
+        
+        let repository = WishItemRepository()
+        let isWished = repository.isItemInWishlist(findProductID: data.productId)
+        switch isWished {
+        case true: configureWishButtonUI(true)
+        case false: configureWishButtonUI(false)
+        }
     }
     
     
