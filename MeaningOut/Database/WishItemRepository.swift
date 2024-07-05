@@ -54,8 +54,12 @@ final class WishItemRepository {
         return result
     }
     
-    func isItemInWishlist(productID: String) -> Bool {
-        let item = realm.objects(WishItem.self).filter("productID == %@", productID).first
-        return item != nil
+    func isItemInWishlist(findProductID: String) -> Bool {
+        let WishItemList = realm.objects(WishItem.self)
+        var isFind = false
+        WishItemList.forEach {
+            if $0.productID == findProductID { isFind = true }
+        }
+        return isFind
     }
 }
