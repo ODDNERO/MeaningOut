@@ -13,6 +13,7 @@ struct Product: Decodable {
 }
 
 struct Item: Decodable {
+    let productId: String
     let title: String
     let link: String
     let image: String

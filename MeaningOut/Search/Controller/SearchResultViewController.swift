@@ -92,8 +92,8 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
         cell.productImageView.tag = indexPath.row
         cell.productImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(productImageClicked)))
         
-        cell.favoriteButton.tag = indexPath.row
-        cell.favoriteButton.addTarget(self, action: #selector(favoriteButtonClicked), for: .touchUpInside)
+        cell.wishButton.tag = indexPath.row
+        cell.wishButton.addTarget(self, action: #selector(wishButtonClicked), for: .touchUpInside)
         return cell
     }
     
@@ -104,10 +104,10 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
         navigationController?.pushViewController(productWebVC, animated: true)
     }
     
-    @objc func favoriteButtonClicked(_ sender: UIButton) {
         if let cell = searchResultView.collectionView.cellForItem(at: IndexPath(item: sender.tag, section: 0)) as? SearchResultCollectionViewCell {
             cell.isFavorite.toggle()
             cell.configureFavoriteButtonUI()
+    @objc func wishButtonClicked(_ sender: UIButton) {
         }
     }
 }

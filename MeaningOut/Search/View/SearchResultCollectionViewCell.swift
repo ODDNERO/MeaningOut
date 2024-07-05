@@ -18,7 +18,7 @@ final class SearchResultCollectionViewCell: UICollectionViewCell {
         imageView.isUserInteractionEnabled = true
         return imageView
     }()
-    var favoriteButton = {
+    var wishButton = {
         let button = UIButton()
         button.layer.cornerRadius = 5
         button.clipsToBounds = true
@@ -26,7 +26,7 @@ final class SearchResultCollectionViewCell: UICollectionViewCell {
         button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         return button
     }()
-    var isFavorite = false
+//    var isWish = false
     
     private let storeNameLabel = {
         let label = UILabel()
@@ -53,18 +53,18 @@ final class SearchResultCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        [productImageView, favoriteButton, storeNameLabel, productNameLabel, priceLabel].forEach {
+        [productImageView, wishButton, storeNameLabel, productNameLabel, priceLabel].forEach {
             contentView.addSubview($0)
         }
         configureLayout()
-        configureFavoriteButtonUI()
+        configureWishButtonUI(false) //임시
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        isFavorite = false
-        configureFavoriteButtonUI()
-    }
+//    override func prepareForReuse() {
+//        super.prepareForReuse()
+//        isWish = false
+//        configureWishButtonUI()
+//    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -83,14 +83,14 @@ extension SearchResultCollectionViewCell {
     }
     
     
-    func configureFavoriteButtonUI() {
-        switch isFavorite {
+    func configureWishButtonUI(_ isWish: Bool) {
+        switch isWish {
         case true:
-            favoriteButton.setImage(Meaning.Image.selected, for: .normal)
-            favoriteButton.backgroundColor = UIColor.white.withAlphaComponent(1.0)
+            wishButton.setImage(Meaning.Image.selected, for: .normal)
+            wishButton.backgroundColor = UIColor.white.withAlphaComponent(1.0)
         case false:
-            favoriteButton.setImage(Meaning.Image.unselected, for: .normal)
-            favoriteButton.backgroundColor = Meaning.Color.gray2.withAlphaComponent(0.4)
+            wishButton.setImage(Meaning.Image.unselected, for: .normal)
+            wishButton.backgroundColor = Meaning.Color.gray2.withAlphaComponent(0.4)
         }
     }
     
@@ -100,7 +100,7 @@ extension SearchResultCollectionViewCell {
             $0.height.equalTo(200)
         }
         
-        favoriteButton.snp.makeConstraints {
+        wishButton.snp.makeConstraints {
             $0.bottom.trailing.equalTo(productImageView).inset(13)
             $0.size.equalTo(30)
         }
