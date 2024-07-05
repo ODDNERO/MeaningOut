@@ -29,6 +29,8 @@
 		CE0379722C20088300D72498 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0379712C20088300D72498 /* EditProfileView.swift */; };
 		CE0379742C20116700D72498 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0379732C20116700D72498 /* UIView+.swift */; };
 		CE59E6032C38106200A302B0 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59E6022C38106200A302B0 /* SearchView.swift */; };
+		CE59E6052C382EAC00A302B0 /* WishListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59E6042C382EAC00A302B0 /* WishListViewController.swift */; };
+		CE59E6092C382FE900A302B0 /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59E6082C382FE900A302B0 /* WishListView.swift */; };
 		CE6826442C32130B0084402B /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6826432C32130B0084402B /* SearchManager.swift */; };
 		CE6826472C32161F0084402B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6826462C32161F0084402B /* NetworkError.swift */; };
 		CE7F837A2C212702000E3C02 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE7F83792C212702000E3C02 /* Alamofire */; };
@@ -71,6 +73,8 @@
 		CE0379712C20088300D72498 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		CE0379732C20116700D72498 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		CE59E6022C38106200A302B0 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		CE59E6042C382EAC00A302B0 /* WishListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewController.swift; sourceTree = "<group>"; };
+		CE59E6082C382FE900A302B0 /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
 		CE6826432C32130B0084402B /* SearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchManager.swift; sourceTree = "<group>"; };
 		CE6826462C32161F0084402B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		CE8CEEC62C2614C4001BE6BA /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 				CE03791F2C1C39E000D72498 /* TabBarController.swift */,
 				CE0379302C1C751600D72498 /* Create */,
 				CE0379322C1C75B700D72498 /* Search */,
+				CE59E6062C382EAF00A302B0 /* WishList */,
 				CE0379332C1C75D600D72498 /* Setting */,
 			);
 			path = Controller;
@@ -145,6 +150,7 @@
 				CE03793F2C1E50E500D72498 /* AvatarPickerView.swift */,
 				CE0379342C1C760A00D72498 /* Create */,
 				CE8CEEC82C264FB0001BE6BA /* Search */,
+				CE59E6072C382FD400A302B0 /* WishList */,
 				CE0379702C20081800D72498 /* Setting */,
 			);
 			path = View;
@@ -195,6 +201,22 @@
 				CE0379712C20088300D72498 /* EditProfileView.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		CE59E6062C382EAF00A302B0 /* WishList */ = {
+			isa = PBXGroup;
+			children = (
+				CE59E6042C382EAC00A302B0 /* WishListViewController.swift */,
+			);
+			path = WishList;
+			sourceTree = "<group>";
+		};
+		CE59E6072C382FD400A302B0 /* WishList */ = {
+			isa = PBXGroup;
+			children = (
+				CE59E6082C382FE900A302B0 /* WishListView.swift */,
+			);
+			path = WishList;
 			sourceTree = "<group>";
 		};
 		CE6826422C3211C20084402B /* Network */ = {
@@ -344,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE03796F2C1FF8CE00D72498 /* EditPictureViewController.swift in Sources */,
+				CE59E6052C382EAC00A302B0 /* WishListViewController.swift in Sources */,
 				CE03791B2C1C247300D72498 /* NextButton.swift in Sources */,
 				CE0379252C1C3BDB00D72498 /* ImageView.swift in Sources */,
 				CE0379362C1C779100D72498 /* SettingProfileView.swift in Sources */,
@@ -353,6 +376,7 @@
 				CE8CEECA2C264FF2001BE6BA /* SearchWordTableViewCell.swift in Sources */,
 				CE8CEED52C2863DF001BE6BA /* Method.swift in Sources */,
 				CE8CEED12C27C232001BE6BA /* SearchResultView.swift in Sources */,
+				CE59E6092C382FE900A302B0 /* WishListView.swift in Sources */,
 				CE6826472C32161F0084402B /* NetworkError.swift in Sources */,
 				CE8CEED72C286848001BE6BA /* ProductWebViewController.swift in Sources */,
 				CE0379422C1E609E00D72498 /* AvatarCollectionViewCell.swift in Sources */,

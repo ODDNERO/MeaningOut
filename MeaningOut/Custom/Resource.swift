@@ -26,6 +26,8 @@ enum Meaning {
         static let selected = UIImage(named: "like_selected")
         static let unselected = UIImage(named: "like_unselected")
         static let search = UIImage(systemName: "magnifyingglass")
+        static let heart = UIImage(systemName: "heart")
+        static let fillHeart = UIImage(systemName: "heart.fill")
         static let person = UIImage(systemName: "person")
         static let right = UIImage(systemName: "chevron.right")
         static let clock = UIImage(systemName: "clock", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))

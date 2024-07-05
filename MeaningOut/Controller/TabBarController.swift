@@ -17,9 +17,13 @@ final class TabBarController: UITabBarController {
         let searchVC = UINavigationController(rootViewController: SearchViewController())
         searchVC.tabBarItem = UITabBarItem(title: "검색", image: Meaning.Image.search, tag: 0)
         
-        let settingVC = UINavigationController(rootViewController: SettingViewController())
-        settingVC.tabBarItem = UITabBarItem(title: "설정", image: Meaning.Image.person, tag: 1)
+        let wishListVC = UINavigationController(rootViewController: WishListViewController())
+        wishListVC.tabBarItem = UITabBarItem(title: "위시", image: Meaning.Image.heart, selectedImage: Meaning.Image.fillHeart)
         
-        setViewControllers([searchVC, settingVC], animated: true)
+        let settingVC = UINavigationController(rootViewController: SettingViewController())
+        settingVC.tabBarItem = UITabBarItem(title: "설정", image: Meaning.Image.person, tag: 2)
+        
+        setViewControllers([searchVC, wishListVC, settingVC], animated: true)
+        selectedIndex = 1
     }
 }
