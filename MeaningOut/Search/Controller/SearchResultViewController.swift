@@ -104,10 +104,21 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
         navigationController?.pushViewController(productWebVC, animated: true)
     }
     
-        if let cell = searchResultView.collectionView.cellForItem(at: IndexPath(item: sender.tag, section: 0)) as? SearchResultCollectionViewCell {
-            cell.isFavorite.toggle()
-            cell.configureFavoriteButtonUI()
     @objc func wishButtonClicked(_ sender: UIButton) {
+        let indexPath = IndexPath(item: sender.tag, section: 0)
+        if let cell = searchResultView.collectionView.cellForItem(at: indexPath) as? SearchResultCollectionViewCell {
+            let data = makeWishItemData(index: indexPath.item)
+            let repository = WishItemRepository()
+            
+            let isWished = repository.isItemInWishlist(findProductID: data.1)
+            switch isWished {
+            case true:
+                repository.deleteItem(data.1)
+                cell.configureWishButtonUI(false)
+            case false:
+                repository.createItem(data.0)
+                cell.configureWishButtonUI(true)
+            }
         }
     }
     
