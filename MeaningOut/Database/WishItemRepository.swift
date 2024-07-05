@@ -60,9 +60,9 @@ final class WishItemRepository {
     }
     
     func isItemInWishlist(findProductID: String) -> Bool {
-        let WishItemList = realm.objects(WishItem.self)
+        let wishItemList = realm.objects(WishItem.self)
         var isFind = false
-        WishItemList.forEach {
+        wishItemList.forEach {
             if $0.productID == findProductID { isFind = true }
         }
         return isFind

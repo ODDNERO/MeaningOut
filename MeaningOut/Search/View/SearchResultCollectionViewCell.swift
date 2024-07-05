@@ -26,7 +26,6 @@ final class SearchResultCollectionViewCell: UICollectionViewCell {
         button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         return button
     }()
-//    var isWish = false
     
     private let storeNameLabel = {
         let label = UILabel()
@@ -62,7 +61,6 @@ final class SearchResultCollectionViewCell: UICollectionViewCell {
     
 //    override func prepareForReuse() {
 //        super.prepareForReuse()
-//        isWish = false
 //        configureWishButtonUI()
 //    }
     

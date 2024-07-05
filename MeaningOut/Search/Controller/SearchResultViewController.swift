@@ -87,12 +87,12 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchResultCollectionViewCell.identifier, for: indexPath) as! SearchResultCollectionViewCell
-        cell.update(data: productList[indexPath.row])
+        cell.update(data: productList[indexPath.item])
         
-        cell.productImageView.tag = indexPath.row
+        cell.productImageView.tag = indexPath.item
         cell.productImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(productImageClicked)))
         
-        cell.wishButton.tag = indexPath.row
+        cell.wishButton.tag = indexPath.item
         cell.wishButton.addTarget(self, action: #selector(wishButtonClicked), for: .touchUpInside)
         return cell
     }
@@ -119,11 +119,6 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
         let selectedItemMall = productList[index].mallName
         let selectedItemLink = productList[index].link
         let wishDate = DateFormatter.customFormatter.string(from: Date())
-        
-        print("Selected Item ID: \(selectedItemID)")
-        print("Selected Item Title: \(selectedItemTitle)")
-        print("Selected Item Price: \(selectedItemPrice)")
-        print("Wish Date: \(wishDate)")
         
         return (WishItem(productID: selectedItemID,
                         title: selectedItemTitle,
