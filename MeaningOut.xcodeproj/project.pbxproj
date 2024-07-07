@@ -54,6 +54,7 @@
 		CE993C832C1B23700024DAEE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CE993C822C1B23700024DAEE /* Base */; };
 		CE993C8B2C1B2AB60024DAEE /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE993C8A2C1B2AB60024DAEE /* APIKey.swift */; };
 		CEA87F3B2C305CD400FAFD45 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA87F3A2C305CD400FAFD45 /* Error.swift */; };
+		CEABA14F2C3A823200A267DD /* WishListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABA14E2C3A823200A267DD /* WishListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -114,6 +115,7 @@
 		CE993C842C1B23700024DAEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE993C8A2C1B2AB60024DAEE /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		CEA87F3A2C305CD400FAFD45 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		CEABA14E2C3A823200A267DD /* WishListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				CE59E6082C382FE900A302B0 /* WishListView.swift */,
+				CEABA14E2C3A823200A267DD /* WishListTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				CE59E6152C383A3100A302B0 /* WishItem.swift in Sources */,
 				CE0379182C1C215200D72498 /* Resource.swift in Sources */,
 				CE8CEECC2C2793F6001BE6BA /* SearchResultCollectionViewCell.swift in Sources */,
+				CEABA14F2C3A823200A267DD /* WishListTableViewCell.swift in Sources */,
 				CE993C792C1B236E0024DAEE /* SceneDelegate.swift in Sources */,
 				CE0379442C1E63DA00D72498 /* IdentifierProtocol.swift in Sources */,
 				CE8CEEC72C2614C4001BE6BA /* SearchResultViewController.swift in Sources */,
