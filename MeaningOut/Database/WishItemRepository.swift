@@ -22,7 +22,7 @@ final class WishItemRepository {
     }
     
     func readAllItem() -> Results<WishItem> {
-        return realm.objects(WishItem.self).sorted(byKeyPath: "wishDate", ascending: true)
+        return realm.objects(WishItem.self).sorted(byKeyPath: "wishDate", ascending: false)
     }
     
     func updateItem<T>(_ data: WishItem, coulmn: String, value: T) {

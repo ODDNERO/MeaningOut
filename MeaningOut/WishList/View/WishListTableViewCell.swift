@@ -46,7 +46,8 @@ class WishListTableViewCell: UITableViewCell {
         let label = UILabel()
         label.textColor = Meaning.Color.primary.withAlphaComponent(0.5)
         label.font = Meaning.Font.medium12
-        label.textAlignment = .left
+        label.textAlignment = .center
+        label.numberOfLines = 1
         return label
     }()
     let wishButton = {
@@ -112,8 +113,8 @@ extension WishListTableViewCell {
             $0.top.equalTo(contentView.safeAreaLayoutGuide.snp.centerY).offset(12)
         }
         wishDateLabel.snp.makeConstraints {
-            $0.trailing.equalTo(wishButton.snp.trailing).inset(10)
-            $0.bottom.equalTo(priceLabel.snp.bottom)
+            $0.trailing.equalTo(wishButton.snp.trailing).inset(15)
+            $0.top.equalTo(priceLabel.snp.bottom)
         }
         wishButton.snp.makeConstraints {
             $0.trailing.equalTo(contentView.safeAreaLayoutGuide)

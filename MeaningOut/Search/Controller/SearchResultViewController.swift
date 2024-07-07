@@ -130,7 +130,10 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
         let selectedItemPrice = Meaning.Method.formatNumber(Int(productList[index].lprice)!) + "원"
         let selectedItemMall = productList[index].mallName
         let selectedItemLink = productList[index].link
-        let wishDate = DateFormatter.customFormatter.string(from: Date())
+        
+        let wishDate = DateFormatter.wishDateFormatter.string(from: Date())
+        let wishTime = DateFormatter.wishTimeFormatter.string(from: Date())
+        let WishDateString = "\(wishDate)\n\(wishTime)"
         
         return (WishItem(productID: selectedItemID,
                         title: selectedItemTitle,
@@ -138,7 +141,7 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
                         price: selectedItemPrice,
                         mallName: selectedItemMall,
                         link: selectedItemLink,
-                        wishDate: wishDate), 
+                        wishDate: WishDateString),
                 selectedItemID)
     }
 }
