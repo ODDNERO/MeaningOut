@@ -34,6 +34,12 @@ extension WishListViewController {
         wishListView.wishTableView.delegate = self
         wishListView.wishTableView.dataSource = self
         wishListView.wishTableView.register(WishListTableViewCell.self, forCellReuseIdentifier: WishListTableViewCell.identifier)
+        wishListView.searchTextField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
+    }
+    @objc private func textFieldEditingChanged() {
+        guard let searchText = wishListView.searchTextField.text else { return }
+        wishList = repository.filterSearchTitleItem(searchText)
+    }
 }
 
 extension WishListViewController: UITableViewDelegate, UITableViewDataSource {
