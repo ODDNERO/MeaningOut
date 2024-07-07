@@ -74,6 +74,14 @@ extension WishListViewController: UITableViewDelegate, UITableViewDataSource {
 //        }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let productWebVC = ProductWebViewController()
+        productWebVC.selectedProductName = wishList?[indexPath.row].title ?? ""
+        guard let link = wishList?[indexPath.row].link else { return }
+        productWebVC.productURL = link
+        navigationController?.pushViewController(productWebVC, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
