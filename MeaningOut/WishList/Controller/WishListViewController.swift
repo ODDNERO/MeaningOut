@@ -24,8 +24,13 @@ final class WishListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        settingNavigation(title: "WISH LIST", rightBarItem: makeMenuButton())
         settingDelegate()
         wishList = repository.readAllItem()
+        wishListView.wishTableView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         wishListView.wishTableView.reloadData()
     }
 }
