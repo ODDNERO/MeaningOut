@@ -23,7 +23,7 @@
 		CE03793E2C1E2A2900D72498 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03793D2C1E2A2900D72498 /* UIViewController+.swift */; };
 		CE0379402C1E50E500D72498 /* AvatarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03793F2C1E50E500D72498 /* AvatarPickerView.swift */; };
 		CE0379422C1E609E00D72498 /* AvatarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0379412C1E609E00D72498 /* AvatarCollectionViewCell.swift */; };
-		CE0379442C1E63DA00D72498 /* ldentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0379432C1E63DA00D72498 /* ldentifierProtocol.swift */; };
+		CE0379442C1E63DA00D72498 /* IdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0379432C1E63DA00D72498 /* IdentifierProtocol.swift */; };
 		CE03796D2C1FF83C00D72498 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03796C2C1FF83C00D72498 /* EditProfileViewController.swift */; };
 		CE03796F2C1FF8CE00D72498 /* EditPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03796E2C1FF8CE00D72498 /* EditPictureViewController.swift */; };
 		CE0379722C20088300D72498 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0379712C20088300D72498 /* EditProfileView.swift */; };
@@ -86,7 +86,7 @@
 		CE03793D2C1E2A2900D72498 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		CE03793F2C1E50E500D72498 /* AvatarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerView.swift; sourceTree = "<group>"; };
 		CE0379412C1E609E00D72498 /* AvatarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCollectionViewCell.swift; sourceTree = "<group>"; };
-		CE0379432C1E63DA00D72498 /* ldentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ldentifierProtocol.swift; sourceTree = "<group>"; };
+		CE0379432C1E63DA00D72498 /* IdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifierProtocol.swift; sourceTree = "<group>"; };
 		CE03796C2C1FF83C00D72498 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		CE03796E2C1FF8CE00D72498 /* EditPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPictureViewController.swift; sourceTree = "<group>"; };
 		CE0379712C20088300D72498 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
@@ -290,7 +290,7 @@
 			children = (
 				CE0379732C20116700D72498 /* UIView+.swift */,
 				CE03793D2C1E2A2900D72498 /* UIViewController+.swift */,
-				CE0379432C1E63DA00D72498 /* ldentifierProtocol.swift */,
+				CE0379432C1E63DA00D72498 /* IdentifierProtocol.swift */,
 				CE59E61D2C384A5E00A302B0 /* DateFormatter+.swift */,
 			);
 			path = Extension;
@@ -459,7 +459,7 @@
 				CE0379182C1C215200D72498 /* Resource.swift in Sources */,
 				CE8CEECC2C2793F6001BE6BA /* SearchResultCollectionViewCell.swift in Sources */,
 				CE993C792C1B236E0024DAEE /* SceneDelegate.swift in Sources */,
-				CE0379442C1E63DA00D72498 /* ldentifierProtocol.swift in Sources */,
+				CE0379442C1E63DA00D72498 /* IdentifierProtocol.swift in Sources */,
 				CE8CEEC72C2614C4001BE6BA /* SearchResultViewController.swift in Sources */,
 				CE03796D2C1FF83C00D72498 /* EditProfileViewController.swift in Sources */,
 				CE59E6172C383A5B00A302B0 /* WishItemRepository.swift in Sources */,

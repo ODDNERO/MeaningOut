@@ -7,17 +7,17 @@
 
 import UIKit
 
-protocol ldentifierProtocol {
+protocol IdentifierProtocol {
     static var identifier: String { get }
 }
 
-extension UITableViewCell: ldentifierProtocol {
+extension UITableViewCell: IdentifierProtocol {
     static var identifier: String {
         return String(describing: self)
     }
 }
 
-extension UICollectionViewCell: ldentifierProtocol {
+extension UICollectionViewCell: IdentifierProtocol {
     static var identifier: String {
         return String(describing: self)
     }
