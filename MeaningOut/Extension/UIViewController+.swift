@@ -68,7 +68,7 @@ extension UIViewController {
         navigationController?.navigationBar.tintColor = .black
         navigationItem.backButtonTitle = ""
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
-        navigationController?.navigationItem.rightBarButtonItem = rightBarItem
+        navigationItem.rightBarButtonItem = rightBarItem
         
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground() //underline

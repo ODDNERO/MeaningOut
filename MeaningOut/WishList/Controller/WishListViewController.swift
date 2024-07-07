@@ -30,6 +30,19 @@ final class WishListViewController: UIViewController {
     }
 }
 extension WishListViewController {
+    private func makeMenuButton() -> UIBarButtonItem {
+        let bytitleAction = UIAction(title: "아이템 이름 정렬") { _ in
+            self.wishList = self.wishList?.sorted(byKeyPath: "title", ascending: true)
+        }
+        let byDeadlineAction = UIAction(title: "위시 날짜 정렬") { _ in
+            self.wishList = self.wishList?.sorted(byKeyPath: "wishDate", ascending: false)
+        }
+        let menu = UIMenu(children: [bytitleAction, byDeadlineAction])
+        let menuButton = UIBarButtonItem(title: nil, image: Meaning.Image.down, target: nil, action: nil, menu: menu)
+        menuButton.tintColor = .black
+        return menuButton
+    }
+    
     private func settingDelegate() {
         wishListView.wishTableView.delegate = self
         wishListView.wishTableView.dataSource = self
@@ -50,6 +63,8 @@ extension WishListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: WishListTableViewCell.identifier) as! WishListTableViewCell
         if let item = wishList?[indexPath.row] { cell.update(data: item) }
+        cell.wishButton.tag = indexPath.row
+        cell.wishButton.addTarget(self, action: #selector(wishButtonClicked), for: .touchUpInside)
         return cell
     }
     @objc func wishButtonClicked(_ sender: UIButton) {
