@@ -51,7 +51,7 @@ final class WishItemRepository {
         }
     }
     
-    func filterSearchTitleItem(column: String, searchText: String) -> Results<WishItem> {
+    func filterSearchTitleItem(_ searchText: String) -> Results<WishItem> {
         let filter = realm.objects(WishItem.self).where {
             $0.title.contains(searchText)
         }

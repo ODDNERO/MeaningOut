@@ -20,6 +20,7 @@ final class SearchResultCollectionViewCell: UICollectionViewCell {
     }()
     var wishButton = {
         let button = UIButton()
+        button.tintColor = .black
         button.layer.cornerRadius = 5
         button.clipsToBounds = true
         button.contentMode = .scaleAspectFit
@@ -80,7 +81,6 @@ extension SearchResultCollectionViewCell {
         case false: configureWishButtonUI(false)
         }
     }
-    
     
     func configureWishButtonUI(_ isWish: Bool) {
         switch isWish {
